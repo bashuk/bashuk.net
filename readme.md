@@ -16,6 +16,11 @@ This project requires a recent version of Node.js (>= 14.17).
 4. `npm run dev` to test locally
 5. `npm run deploy` to deploy to vercel 💪
 
+## Customising the kit
+
+* [Customising nextjs-notion-starter-kit](https://github.com/transitive-bullshit/nextjs-notion-starter-kit/blob/main/contributing.md)
+* [Customising to react-notion-x](https://github.com/NotionX/react-notion-x/blob/master/contributing.md)
+
 ## License
 
 MIT © Alex Bashuk
