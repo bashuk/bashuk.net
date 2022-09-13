@@ -6,7 +6,7 @@ It uses Notion as a CMS, [react-notion-x](https://github.com/NotionX/react-notio
 
 ## Setup
 
-**All config is defined in [site.config.ts](./site.config.ts).**
+**Main config is defined in [site.config.ts](./site.config.ts).**
 
 This project requires a recent version of Node.js (>= 14.17).
 
@@ -15,6 +15,10 @@ This project requires a recent version of Node.js (>= 14.17).
 3. `npm install`
 4. `npm run dev` to test locally
 5. `npm run deploy` to deploy to vercel 💪
+
+## Customising a site
+
+1. Update site.config.ts
 
 ## Customising the kit
 
