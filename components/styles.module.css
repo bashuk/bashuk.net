@@ -89,30 +89,6 @@
   color: #2795e9;
 }
 
-.twitter:hover {
-  color: #2795e9;
-}
-
-.zhihu:hover {
-  color: #0066ff;
-}
-
-.github:hover {
-  color: #c9510c;
-}
-
-.youtube:hover {
-  color: #ff0000;
-}
-
-.linkedin:hover {
-  color: #0077b5;
-}
-
-.newsletter:hover {
-  color: #777777;
-}
-
 .comments {
   width: 100%;
   margin-top: 2em;
@@ -137,32 +113,6 @@
   .footer .copyright {
     order: 3;
   }
-}
-
-.pageActions {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  padding: 6px 12px 12px;
-}
-
-.pageActions a {
-  cursor: pointer;
-  font-size: 24px;
-  display: inline-flex;
-  padding: 12px;
-  margin-right: 1vw;
-  border-radius: 50%;
-  background: transparent;
-  transition: all 250ms ease-out;
-}
-
-.pageActions a:last-of-type {
-  margin-right: 0;
-}
-
-.pageActions a:hover {
-  transition: all 50ms ease-out;
 }
 
 .likeTweet:hover {

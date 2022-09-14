@@ -11,17 +11,10 @@ export default siteConfig({
   // basic site info (required)
   name: 'єБашук',
   domain: 'ebash.uk',
-  author: 'Олександр Башук',
+  author: 'Oleksandr Bashuk',
 
   // open graph metadata (optional)
-  description: 'єБашук - Сашкові нотатки в Інтернеті',
-
-  // social usernames (optional)
-  // twitter: 'transitive_bs',
-  // github: 'transitive-bullshit',
-  // linkedin: 'fisch2',
-  // newsletter: '#', // optional newsletter URL
-  // youtube: '#', // optional youtube channel name or `channel/UCGbXXXXXXXXXXXXXXXXXXXXXX`
+  description: 'єБашук - Сашкові нейрони в мережі',
 
   // default notion icon and cover images for site-wide consistency (optional)
   // page-specific values will override these site-wide defaults
