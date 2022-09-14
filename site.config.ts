@@ -9,12 +9,12 @@ export default siteConfig({
   rootNotionSpaceId: null,
 
   // basic site info (required)
-  name: '/home/bashuk',
-  domain: 'alexbash.uk',
-  author: 'Alex Bashuk',
+  name: 'єБашук',
+  domain: 'ebash.uk',
+  author: 'Олександр Башук',
 
   // open graph metadata (optional)
-  description: 'Alex\'s home page',
+  description: 'єБашук - Сашкові нотатки в Інтернеті',
 
   // social usernames (optional)
   // twitter: 'transitive_bs',
