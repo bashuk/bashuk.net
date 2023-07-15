@@ -23,7 +23,7 @@ This project requires a recent version of Node.js (>= 14.17).
 ## Customising the kit
 
 * [Customising nextjs-notion-starter-kit](https://github.com/transitive-bullshit/nextjs-notion-starter-kit/blob/main/contributing.md)
-* [Customising to react-notion-x](https://github.com/NotionX/react-notion-x/blob/master/contributing.md)
+* [Customising react-notion-x](https://github.com/NotionX/react-notion-x/blob/master/contributing.md)
 
 ## License
 
