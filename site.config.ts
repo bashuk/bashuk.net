@@ -42,6 +42,7 @@ export default siteConfig({
     '/crypto': 'f081b0b80d774895b0038ab75761a647',
     '/crypto-en': '39dfbedfbe6a4311990c3655c8fab881',
     '/donations-to-Ukraine-stuck-in-JPMorgan': '5534261ab1bd4d8bb34a109bde613689',
+    '/songs': '51031bffae9e48049b38058d46e3456d',
   },
 
   // whether to use the default notion navigation style or a custom one with links to
