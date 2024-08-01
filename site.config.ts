@@ -10,7 +10,7 @@ export default siteConfig({
 
   // basic site info (required)
   name: '/home/bashuk',
-  domain: 'alexbash.uk',
+  domain: 'bashuk.net',
   author: 'Oleksandr Bashuk',
 
   // open graph metadata (optional)
