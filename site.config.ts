@@ -45,6 +45,7 @@ export default siteConfig({
     '/pisni': '51031bffae9e48049b38058d46e3456d',
     '/ibkr': '318dbd96116040989ca8681447b9f97b',
     '/amex': 'f7929489e7934927bc9a51f905344aa7',
+    '/donate-weekly': '124199545879807da647c00418c699e9',
   },
 
   // whether to use the default notion navigation style or a custom one with links to
