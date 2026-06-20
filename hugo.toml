@@ -1,0 +1,21 @@
+baseURL = 'https://bashuk.net/'
+locale = 'en-us'
+title = 'bashuk.net'
+theme = 'hugo-book'
+enableGitInfo = true
+
+[params]
+  BookTheme = 'auto'
+  BookSection = 'docs'
+  BookToC = true
+  BookSearch = true
+  BookComments = false
+  BookDateFormat = 'January 2, 2006'
+
+[markup]
+  [markup.goldmark.renderer]
+    unsafe = true
+
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'
