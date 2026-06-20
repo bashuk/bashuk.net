@@ -9,5 +9,5 @@ Notes, essays, and working documents.
 
 ## Latest
 
-- [First post](/posts/first-post/)
-- [About](/docs/about/)
+- [First post]({{< relref "/posts/first-post" >}})
+- [About]({{< relref "/docs/about" >}})
