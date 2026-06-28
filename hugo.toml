@@ -1,16 +1,42 @@
 baseURL = 'https://bashuk.net/'
 locale = 'en-us'
-title = 'bashuk.net'
+title = '/home/bashuk'
 theme = 'hugo-book'
 enableGitInfo = true
+defaultContentLanguage = 'en'
+defaultContentLanguageInSubdir = false
+disableKinds = ['taxonomy', 'term']
 
 [params]
-  BookTheme = 'auto'
-  BookSection = 'docs'
+  BookTheme = 'light'
+  BookSection = '/'
   BookToC = true
   BookSearch = true
   BookComments = false
-  BookDateFormat = 'January 2, 2006'
+  BookDateFormat = '2006/01/02'
+
+[languages]
+  [languages.en]
+    label = 'English'
+    locale = 'en-us'
+    contentDir = 'content.en'
+    weight = 1
+
+  [languages.uk]
+    label = 'Українською'
+    locale = 'uk'
+    contentDir = 'content.uk'
+    weight = 2
+
+[[languages.en.menu.after]]
+  name = 'Get in touch'
+  url = 'mailto:hello@bashuk.net'
+  weight = 20
+
+[[languages.uk.menu.after]]
+  name = 'Написати листа'
+  url = 'mailto:hello@bashuk.net'
+  weight = 20
 
 [markup]
   [markup.goldmark.renderer]
