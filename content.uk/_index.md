@@ -10,12 +10,14 @@ weight: 1
 
 - [🇺🇦 Підтримка України]({{< relref "/pinned/supporting-ukraine" >}})
 
-## Дописи
+## Ключові дописи
 
-- [🫙 Щотижневі баночки]({{< relref "/posts/donate-weekly" >}})
-- [💸 Аналіз: перекази GBP → UAH]({{< relref "/posts/gbp-uah" >}})
 - [🏦 Аналіз: Interactive Brokers]({{< relref "/posts/ibkr" >}})
+- [💳 Аналіз: American Express]({{< relref "/posts/amex" >}})
+- [💸 Аналіз: перекази GBP → UAH]({{< relref "/posts/gbp-uah" >}})
 - [💸 Донати в крипті з UK]({{< relref "/posts/crypto" >}})
 - [🕶️ Про окуляри Ray-Ban Stories]({{< relref "/posts/ray-ban-stories" >}})
-- [💳 Аналіз: American Express]({{< relref "/posts/amex" >}})
-- [🏦 [ВИРІШЕНО] Орієнтовно £422,800 донатів Україні застрягли в J.P. Morgan Chase]({{< relref "/posts/donations-to-ukraine-stuck-in-jpmorgan" >}})
+
+## Контактна інформація
+
+Напишіть мені листа на hello@bashuk.net.

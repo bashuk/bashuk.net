@@ -10,12 +10,14 @@ weight: 1
 
 - [🇺🇦 Supporting Ukraine]({{< relref "/pinned/supporting-ukraine" >}})
 
-## Posts
+## Key posts
 
-- [🫙 Weekly donation jars]({{< relref "/posts/donate-weekly" >}})
-- [💸 Analysis: GBP → UAH transfers]({{< relref "/posts/gbp-uah" >}})
 - [🏦 Analysis: Interactive Brokers]({{< relref "/posts/ibkr" >}})
+- [💳 Analysis: American Express]({{< relref "/posts/amex" >}})
+- [💸 Analysis: GBP → UAH transfers]({{< relref "/posts/gbp-uah" >}})
 - [💸 Donating in crypto from the UK]({{< relref "/posts/crypto" >}})
 - [🕶️ About Ray-Ban Stories glasses]({{< relref "/posts/ray-ban-stories" >}})
-- [💳 Analysis: American Express]({{< relref "/posts/amex" >}})
-- [🏦 [SOLVED] Estimated £422,800 of donations to Ukraine are stuck in J.P. Morgan Chase]({{< relref "/posts/donations-to-ukraine-stuck-in-jpmorgan" >}})
+
+## Contact info
+
+Drop me an email at hello@bashuk.net.

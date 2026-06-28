@@ -1,5 +1,5 @@
 ---
-title: "Дописи"
+title: "Всі дописи"
 weight: 30
 bookFlatSection: true
 ---

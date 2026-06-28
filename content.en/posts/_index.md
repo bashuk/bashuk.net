@@ -1,5 +1,5 @@
 ---
-title: "Posts"
+title: "All posts"
 weight: 30
 bookFlatSection: true
 ---
