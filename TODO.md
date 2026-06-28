@@ -1,7 +1,8 @@
 # TODO
 
-- [ ] Migrate the content.
+- [x] Migrate the content.
 - [ ] Add Google Analytics.
+- [ ] Add website icon
 - [ ] Add copyright footers.
 - [ ] Fix the CSS for visited links -- don't want them to be purple.
 - [ ] Explore if possible to add light/dark theme switch.
