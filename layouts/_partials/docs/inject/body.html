@@ -1,0 +1,116 @@
+{{- if eq .Kind "404" -}}
+<style>
+  .a-egg {
+    box-sizing: border-box;
+    max-width: 52rem;
+    padding: 2rem;
+    line-height: 1.45;
+  }
+
+  .not-found .a-egg h1 {
+    margin: 0;
+    font-size: clamp(1.25rem, 4vmin, 2.25rem);
+    font-weight: 400;
+  }
+
+  .not-found .a-egg--impatient h1 {
+    font-weight: 500;
+  }
+
+  .not-found .a-egg--fraying h1 {
+    transform: rotate(-0.4deg);
+  }
+
+  .not-found .a-egg--unravelling h1 {
+    font-weight: 600;
+    transform: rotate(0.8deg) scale(1.03);
+  }
+
+  .not-found .a-egg--terminal h1 {
+    animation: a-egg-rattle 120ms steps(2, jump-none) infinite;
+    font-weight: 700;
+  }
+
+  @keyframes a-egg-rattle {
+    0% { transform: translate(-1px, 1px) rotate(-0.8deg); }
+    50% { transform: translate(1px, -1px) rotate(0.8deg); }
+    100% { transform: translate(1px, 1px) rotate(-0.4deg); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .not-found .a-egg--terminal h1 {
+      animation: none;
+    }
+  }
+</style>
+
+<script>
+  (() => {
+    const segments = window.location.pathname.split("/").filter(Boolean);
+    const depth = segments.length;
+
+    if (depth < 1 || depth > 42 || !segments.every(segment => segment === "a")) {
+      return;
+    }
+
+    const messages = [
+      "I told you the page is not found. Why are you trying this?",
+      "Still not found. Your diligence has been noted, though not rewarded.",
+      "You appear to be testing whether persistence can alter HTTP semantics.",
+      "It cannot.",
+      "Another “a”. How refreshingly original.",
+      "Please stop yelling. This is a respectable website.",
+      "The alphabet is full of letters. Must we keep doing this one?",
+      "I admire confidence unsupported by evidence.",
+      "We have now moved beyond navigation and into performance art.",
+      "There is no page here. There is, however, an increasingly awkward silence.",
+      "You could turn back. I would think no less of you than I currently do.",
+      "Ah. You chose another “a”. A bold rejection of growth.",
+      "At this depth, even the breadcrumbs have resigned.",
+      "The server has checked again. It remains unimpressed.",
+      "Perhaps the next “a” will work. That was sarcasm, for the record.",
+      "Your browser is beginning to suspect this is personal.",
+      "I have filed this journey under “avoidable”.",
+      "We are running out of tasteful ways to say no.",
+      "No page. No treasure. Barely a premise.",
+      "You have confused repetition with a search strategy.",
+      "I was dryly amused. I am now merely dry.",
+      "This URL has more layers than the idea supporting it.",
+      "Do you also press lift buttons repeatedly to make them feel urgency?",
+      "The “a” department has asked me to revoke your access.",
+      "We passed reasonable several slashes ago.",
+      "I can hear the URL creaking.",
+      "A-A-A-A-A-A-A-A! I CAN YELL TOO!",
+      "There. Was that the sophisticated exchange you wanted?",
+      "THE PAGE IS NOT HIDING. IT DOES NOT EXIST.",
+      "I HAVE EXPLAINED THIS IN LOWERCASE, TITLE CASE, AND NOW DISTRESS.",
+      "THE SLASHES ARE MULTIPLYING. CONTAINMENT HAS FAILED.",
+      "STOP ADDING A's. WE HAVE ENOUGH A's.",
+      "I AM CONSULTING THE OTHER LETTERS. THEY WANT NO PART OF THIS.",
+      "THE URL BAR IS NOW A CRIME SCENE.",
+      "SYSTEM STATUS: FINE. MY STATUS: INCREASINGLY TYPOGRAPHICAL.",
+      "AAAAAAAAAAAAAAAA! THIS IS NOT A CONVERSATION ANYMORE!",
+      "I HAVE BECOME THE ERROR MESSAGE I WARNED YOU ABOUT.",
+      "FORTY-ONE A's. EVEN ABSURDITY HAS STARTED CHECKING ITS WATCH.",
+      "FORTY-TWO. THE ANSWER IS STILL 404. PLEASE LEAVE WITH WHAT REMAINS OF OUR DIGNITY."
+    ];
+
+    const main = document.querySelector(".not-found main");
+    if (!main) {
+      return;
+    }
+
+    const message = depth <= 3 ? "404 - Not Found" : messages[depth - 4];
+    const heading = document.createElement("h1");
+    heading.textContent = message;
+
+    main.className = "a-egg";
+    if (depth >= 12) main.classList.add("a-egg--impatient");
+    if (depth >= 22) main.classList.add("a-egg--fraying");
+    if (depth >= 32) main.classList.add("a-egg--unravelling");
+    if (depth >= 39) main.classList.add("a-egg--terminal");
+    main.replaceChildren(heading);
+    document.title = depth <= 3 ? message : `A × ${depth}`;
+  })();
+</script>
+{{- end -}}
