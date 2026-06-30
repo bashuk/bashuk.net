@@ -9,3 +9,4 @@
 - [ ] Explore if possible to add light/dark theme switch.
 - [ ] Add a /cv/ page.
 - [ ] Add a /pay/ page.
+- [ ] Set up Gmail SMTP for sending emails from hello@bashuk.net
