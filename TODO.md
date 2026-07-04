@@ -10,3 +10,4 @@
 - [ ] Add a /cv/ page.
 - [ ] Add a /pay/ page.
 - [ ] Set up Gmail SMTP for sending emails from hello@bashuk.net
+- [ ] Change the layout type of the /war/ page to "Homepage" (to hide the nav)
