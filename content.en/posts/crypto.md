@@ -1,5 +1,6 @@
 ---
 title: "💸 Donating in crypto from the UK"
+linkTitle: "Donating in crypto from the UK"
 date: 2024-11-02
 translationKey: "crypto"
 ---

@@ -1,5 +1,6 @@
 ---
 title: "🫙 Weekly donation jars"
+linkTitle: "Weekly donation jars"
 date: 2025-12-27
 translationKey: "donate-weekly"
 ---

@@ -1,5 +1,6 @@
 ---
 title: "💸 Донати в крипті з UK"
+linkTitle: "Донати в крипті з UK"
 date: 2024-11-02
 translationKey: "crypto"
 ---

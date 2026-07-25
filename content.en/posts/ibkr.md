@@ -1,5 +1,6 @@
 ---
 title: "🏦 Analysis: Interactive Brokers"
+linkTitle: "Analysis: Interactive Brokers"
 date: 2025-05-07
 translationKey: "ibkr"
 ---

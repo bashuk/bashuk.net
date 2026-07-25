@@ -1,5 +1,6 @@
 ---
 title: "🕶️ About Ray-Ban Stories glasses"
+linkTitle: "Ray-Ban Stories review"
 date: 2024-09-05
 translationKey: "ray-ban-stories"
 ---

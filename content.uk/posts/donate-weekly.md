@@ -1,5 +1,6 @@
 ---
 title: "🫙 Щотижневі баночки"
+linkTitle: "Щотижневі баночки"
 date: 2025-12-27
 translationKey: "donate-weekly"
 ---

@@ -1,5 +1,6 @@
 ---
 title: "🏦 [SOLVED] Estimated £422,800 of donations to Ukraine are stuck in J.P. Morgan Chase"
+linkTitle: "Donations stuck in J.P. Morgan Chase"
 date: 2022-08-30
 translationKey: "donations-to-ukraine-stuck-in-jpmorgan"
 ---

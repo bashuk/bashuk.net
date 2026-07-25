@@ -1,5 +1,6 @@
 ---
 title: "💸 Analysis: GBP → UAH transfers"
+linkTitle: "Analysis: GBP → UAH transfers"
 date: 2025-12-07
 translationKey: "gbp-uah"
 ---

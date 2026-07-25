@@ -1,5 +1,6 @@
 ---
 title: "💳 Analysis: American Express"
+linkTitle: "Analysis: American Express"
 date: 2023-07-29
 translationKey: "amex"
 ---

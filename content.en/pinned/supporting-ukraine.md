@@ -1,5 +1,6 @@
 ---
 title: "🇺🇦 Supporting Ukraine"
+linkTitle: "Supporting Ukraine"
 weight: 5
 url: "/war/"
 translationKey: "supporting-ukraine"
