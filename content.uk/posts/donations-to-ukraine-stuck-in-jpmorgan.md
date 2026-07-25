@@ -1,6 +1,6 @@
 ---
 title: "🏦 [ВИРІШЕНО] Орієнтовно £422,800 донатів Україні застрягли в J.P. Morgan Chase"
-linkTitle: "Донати застрягли в J.P. Morgan Chase"
+linkTitle: "Донати, що застрягли в J.P. Morgan Chase"
 date: 2022-08-30
 translationKey: "donations-to-ukraine-stuck-in-jpmorgan"
 ---

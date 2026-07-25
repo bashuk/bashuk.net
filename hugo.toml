@@ -28,8 +28,28 @@ disableKinds = ['taxonomy', 'term']
     contentDir = 'content.uk'
     weight = 2
 
+[[languages.en.menu.home]]
+  name = '/home/bashuk'
+  pageRef = '/'
+  weight = 10
+
+[[languages.en.menu.home]]
+  name = 'Give feedback'
+  url = 'mailto:hello@bashuk.net'
+  weight = 20
+
 [[languages.en.menu.after]]
   name = 'Get in touch'
+  url = 'mailto:hello@bashuk.net'
+  weight = 20
+
+[[languages.uk.menu.home]]
+  name = '/home/bashuk'
+  pageRef = '/'
+  weight = 10
+
+[[languages.uk.menu.home]]
+  name = 'Залишити відгук'
   url = 'mailto:hello@bashuk.net'
   weight = 20
 
