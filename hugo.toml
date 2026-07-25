@@ -34,6 +34,11 @@ disableKinds = ['taxonomy', 'term']
   weight = 10
 
 [[languages.en.menu.home]]
+  name = 'Українською'
+  url = '/uk/war/'
+  weight = 15
+
+[[languages.en.menu.home]]
   name = 'Give feedback'
   url = 'mailto:hello@bashuk.net'
   weight = 20
@@ -47,6 +52,11 @@ disableKinds = ['taxonomy', 'term']
   name = '/home/bashuk'
   pageRef = '/'
   weight = 10
+
+[[languages.uk.menu.home]]
+  name = 'English'
+  url = '/war/'
+  weight = 15
 
 [[languages.uk.menu.home]]
   name = 'Залишити відгук'
