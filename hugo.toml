@@ -33,17 +33,17 @@ disableKinds = ['taxonomy', 'term']
     weight = 2
 
 [[languages.en.menu.home]]
-  name = '🏠 Home'
-  pageRef = '/'
+  name = '🇺🇦 Укр'
+  url = '/uk/war/'
   weight = 10
 
 [[languages.en.menu.home]]
-  name = '🇺🇦 Українською'
-  url = '/uk/war/'
+  name = '🏠'
+  pageRef = '/'
   weight = 15
 
 [[languages.en.menu.home]]
-  name = '✉️ Feedback'
+  name = '✉️'
   url = 'mailto:hello@bashuk.net'
   weight = 20
 
@@ -53,17 +53,17 @@ disableKinds = ['taxonomy', 'term']
   weight = 20
 
 [[languages.uk.menu.home]]
-  name = '🏠 Головна'
-  pageRef = '/'
+  name = '🇬🇧 Eng'
+  url = '/war/'
   weight = 10
 
 [[languages.uk.menu.home]]
-  name = '🇬🇧 English'
-  url = '/war/'
+  name = '🏠'
+  pageRef = '/'
   weight = 15
 
 [[languages.uk.menu.home]]
-  name = '✉️ Відгук'
+  name = '✉️'
   url = 'mailto:hello@bashuk.net'
   weight = 20
 
