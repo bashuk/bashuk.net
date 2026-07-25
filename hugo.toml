@@ -15,6 +15,10 @@ disableKinds = ['taxonomy', 'term']
   BookComments = false
   BookDateFormat = '2006/01/02'
 
+[services]
+  [services.googleAnalytics]
+    id = 'G-QGRGXLZZ3K'
+
 [languages]
   [languages.en]
     label = 'English'
