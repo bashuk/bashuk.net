@@ -29,17 +29,17 @@ disableKinds = ['taxonomy', 'term']
     weight = 2
 
 [[languages.en.menu.home]]
-  name = '/home/bashuk'
+  name = '🏠 Home'
   pageRef = '/'
   weight = 10
 
 [[languages.en.menu.home]]
-  name = 'Українською'
+  name = '🇺🇦 Українською'
   url = '/uk/war/'
   weight = 15
 
 [[languages.en.menu.home]]
-  name = 'Give feedback'
+  name = '✉️ Feedback'
   url = 'mailto:hello@bashuk.net'
   weight = 20
 
@@ -49,17 +49,17 @@ disableKinds = ['taxonomy', 'term']
   weight = 20
 
 [[languages.uk.menu.home]]
-  name = '/home/bashuk'
+  name = '🏠 Головна'
   pageRef = '/'
   weight = 10
 
 [[languages.uk.menu.home]]
-  name = 'English'
+  name = '🇬🇧 English'
   url = '/war/'
   weight = 15
 
 [[languages.uk.menu.home]]
-  name = 'Залишити відгук'
+  name = '✉️ Відгук'
   url = 'mailto:hello@bashuk.net'
   weight = 20
 

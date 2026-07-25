@@ -1,12 +1,11 @@
 ---
-title: "🇺🇦 Підтримка України"
-linkTitle: "Підтримка України"
+title: "Підтримка України"
 weight: 5
 url: "/uk/war/"
 translationKey: "supporting-ukraine"
 layout: landing
 ---
-# 🇺🇦 Підтримка України
+# Підтримка України
 
 Маленькі кроки, які можуть суттєво допомогти.
 
