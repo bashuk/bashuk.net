@@ -81,7 +81,7 @@ During February 25-26, the payment details mentioned the correct sort-code in J.
 
 Click the image to enlarge and see the details:
 
-{{< image src="/assets/nbu_payments_v3.png" alt="NBU payment details showing the incorrect GBP account number" >}}
+{{< image src="/assets/images/nbu_payments_v3.png" alt="NBU payment details showing the incorrect GBP account number" >}}
 
 #### Evidence of the honest mistake
 

@@ -81,7 +81,7 @@ translationKey: "donations-to-ukraine-stuck-in-jpmorgan"
 
 Натисніть на зображення, щоб збільшити його й побачити деталі:
 
-{{< image src="/assets/nbu_payments_v3.png" alt="Реквізити НБУ з неправильним номером рахунку для платежів у GBP" >}}
+{{< image src="/assets/images/nbu_payments_v3.png" alt="Реквізити НБУ з неправильним номером рахунку для платежів у GBP" >}}
 
 #### Докази чесної помилки
 

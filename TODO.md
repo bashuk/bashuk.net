@@ -3,11 +3,11 @@
 - [x] Migrate the content.
 - [x] Create template markdown files for easy creation of new articles.
 - [x] Add copyright footers.
+- [x] Fix the CSS for visited links -- don't want them to be purple.
 - [ ] Add Google Analytics.
 - [ ] Add website icon
-- [ ] Fix the CSS for visited links -- don't want them to be purple.
 - [ ] Explore if possible to add light/dark theme switch.
 - [ ] Add a /cv/ page.
-- [ ] Add a /pay/ page.
+- [ ] Add a /pay/ page (with encryption / password protection?).
 - [ ] Set up Gmail SMTP for sending emails from hello@bashuk.net
 - [ ] Change the layout type of the /war/ page to "Homepage" (to hide the nav)
