@@ -1,8 +1,227 @@
+// ============================================================
+// bashuk.net — custom theme layer for Hugo Book (light mode)
+// Modern, minimal, elegant — clean white with a violet→cyan accent
+// ============================================================
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root {
+  // --- Palette: crisp light, with a live accent ---
+  --accent-1: #7c3aed;   // violet
+  --accent-2: #0891b2;   // cyan (darkened for AA contrast on white)
+  --gray-100: #f4f5f7;
+  --gray-200: #e5e7eb;
+  --body-background: #fbfbfd;
+  --body-font-color: #1f2430;
+  --color-link: var(--accent-1);
+  --border-radius: .6rem;
+
+  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --mono-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+
+  --accent-gradient: linear-gradient(120deg, var(--accent-1), var(--accent-2));
+}
+
+// --- Base type & background: soft depth, not a flat slab of white ---
+body {
+  font-family: var(--font-family);
+  background:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(124, 58, 237, 0.06), transparent),
+    radial-gradient(ellipse 60% 40% at 100% 0%, rgba(8, 145, 178, 0.05), transparent),
+    var(--body-background);
+  letter-spacing: -0.011em;
+}
+
+::selection {
+  background: var(--accent-1);
+  color: #fff;
+}
+
+// Slim, on-brand scrollbar
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: var(--gray-200);
+  border-radius: 999px;
+  border: 2px solid var(--body-background);
+}
+::-webkit-scrollbar-thumb:hover { background: var(--accent-1); }
+
+// --- Headings: tight, gradient accent on H1 only (keeps it minimal) ---
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family);
+  letter-spacing: -0.02em;
+  scroll-margin-top: 2rem;
+}
+
+.markdown > h1:first-child,
+h1 {
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 700;
+}
+
+// --- Links: animated gradient underline instead of flat hover ---
+a[href], a[role="button"] {
+  position: relative;
+  transition: color .15s ease;
+}
+
+.markdown a[href] {
+  background-image: var(--accent-gradient);
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 2px;
+  transition: background-size .25s ease, color .25s ease;
+  padding-bottom: 1px;
+}
+.markdown a[href]:hover {
+  background-size: 100% 2px;
+}
 .markdown a[href]:visited {
   color: var(--color-link);
 }
 
+// --- Sticky glass header / book menu ---
+.book-menu .book-menu-content {
+  background: rgba(251, 251, 253, 0.75);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  border-right: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.book-menu a.active {
+  position: relative;
+  color: var(--accent-1);
+  font-weight: 600;
+}
+.book-menu a.active::before {
+  content: "";
+  position: absolute;
+  left: -1rem;
+  top: 0.15em;
+  bottom: 0.15em;
+  width: 3px;
+  border-radius: 999px;
+  background: var(--accent-gradient);
+}
+
+.book-menu nav a[href]:hover,
+.book-menu nav a[role=button]:hover {
+  opacity: 1;
+  color: var(--accent-1);
+  transition: color .15s ease;
+}
+
+// --- Code blocks: rounded, bordered, subtle lift on hover ---
+pre, code {
+  font-family: var(--mono-family) !important;
+  font-size: 0.875em;
+}
+
+.highlight, pre {
+  border-radius: var(--border-radius);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 20px rgba(31, 36, 48, 0.06);
+  transition: box-shadow .25s ease, border-color .25s ease;
+}
+.highlight:hover, pre:hover {
+  border-color: rgba(124, 58, 237, 0.3);
+  box-shadow: 0 8px 28px rgba(124, 58, 237, 0.1);
+}
+
+:not(pre) > code {
+  background: var(--gray-100);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: .35em;
+  padding: .15em .4em;
+  color: var(--accent-2);
+}
+
+// --- Blockquotes: accent bar instead of default box ---
+blockquote {
+  border-inline-start: 3px solid;
+  border-image: var(--accent-gradient) 1;
+  background: rgba(124, 58, 237, 0.04);
+  border-radius: 0 var(--border-radius) var(--border-radius) 0;
+  padding: .75em 1.2em;
+}
+
+// --- Horizontal rules: fade gradient, not a hard line ---
+hr {
+  border: none;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0,0,0,0.12), transparent);
+  margin: 2.5em 0;
+}
+
+// --- Tables: cleaner, card-like ---
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+th {
+  background: var(--gray-100);
+  font-weight: 600;
+}
+td, th {
+  border-color: rgba(0, 0, 0, 0.06) !important;
+}
+tr:hover td {
+  background: rgba(0, 0, 0, 0.015);
+}
+
+// --- Search box: glow on focus ---
+.book-search input {
+  border-radius: var(--border-radius);
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+.book-search input:focus {
+  outline: none;
+  border-color: var(--accent-1);
+  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.15);
+}
+
+// --- Pagination / buttons: soft pill, tint on hover ---
+ul.pagination .page-item a {
+  border-radius: var(--border-radius);
+  transition: background .2s ease, transform .15s ease;
+}
+ul.pagination .page-item a:hover {
+  background: rgba(124, 58, 237, 0.08);
+  transform: translateY(-1px);
+}
+
+// --- Post cards on list pages: gentle lift on hover ---
+.book-post {
+  border-radius: var(--border-radius);
+  transition: transform .2s ease;
+}
+.book-post:hover {
+  transform: translateY(-2px);
+}
+.book-post-thumbnail img {
+  border-radius: var(--border-radius);
+}
+
+// --- Footer: quieter, smaller ---
+.book-footer {
+  opacity: 0.65;
+  font-size: var(--font-size-smaller);
+}
+
+// --- Your existing landing page width rule, kept ---
 .book-layout-landing .book-page {
   max-width: 48rem;
   margin-inline: auto;
+}
+
+// --- Respect users who don't want motion ---
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
 }
