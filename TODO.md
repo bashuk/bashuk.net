@@ -11,3 +11,4 @@
 - [ ] Add a /cv/ page.
 - [ ] Add a /pay/ page (with encryption / password protection?).
 - [ ] Set up Gmail SMTP for sending emails from hello@bashuk.net
+- [ ] Use Cloudflare DNS instead of Namecheap DNS to allow fast TLS/HTTPS forwarding from war.bashuk.net to bashuk.net/war
