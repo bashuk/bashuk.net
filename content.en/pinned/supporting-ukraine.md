@@ -43,7 +43,7 @@ Small steps that can make a big difference.
 - [Purchase Ukrainian goods](https://shop.brave.ua/)
 - [Boycott Russian products and services](https://som.yale.edu/story/2022/almost-1000-companies-have-curtailed-operations-russia-some-remain)
 - [Ship humanitarian aid to Ukraine](https://help.gov.ua/en)
-- Share the link to this site: [bashuk.net/war/](https://bashuk.net/war/)
+- Share the link to this site: [war.bashuk.net](https://war.bashuk.net)
 
 ---
 

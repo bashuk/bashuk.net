@@ -43,7 +43,7 @@ layout: landing
 - [Купуйте українські товари](https://shop.brave.ua/)
 - [Бойкотуйте російські товари та послуги](https://som.yale.edu/story/2022/almost-1000-companies-have-curtailed-operations-russia-some-remain)
 - [Надсилайте гуманітарну допомогу в Україну](https://help.gov.ua/)
-- Поділіться посиланням на цю сторінку: [bashuk.net/uk/war/](https://bashuk.net/uk/war/)
+- Поділіться посиланням на цю сторінку: [war.bashuk.net](https://war.bashuk.net)
 
 ---
 
