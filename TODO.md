@@ -7,7 +7,7 @@
 - [x] Change the layout type of the /war/ page to "Homepage" (to hide the nav)
 - [x] Add Google Analytics.
 - [x] Use Cloudflare DNS instead of Namecheap DNS
-- [ ] Add website icon
+- [x] Add website icon
 - [ ] Explore if possible to add light/dark theme switch.
 - [ ] Add a /cv/ page.
 - [ ] Add a /pay/ page (with encryption / password protection?).
