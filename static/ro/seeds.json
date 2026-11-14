@@ -1,0 +1,70 @@
+[
+  {
+    "module_id": "first-conversations",
+    "module": "First conversations",
+    "seeds": [
+      "salut",
+      "buna-ziua",
+      "la-revedere",
+      "te-rog",
+      "multumesc",
+      "cu-placere",
+      "scuze",
+      "da",
+      "nu",
+      "nu-inteleg",
+      "puteti-repeta",
+      "vorbiti-engleza"
+    ]
+  },
+  {
+    "module_id": "subject-pronouns",
+    "module": "Subject pronouns",
+    "seeds": [
+      "eu",
+      "tu",
+      "el",
+      "ea",
+      "noi",
+      "voi",
+      "ei",
+      "ele"
+    ]
+  },
+  {
+    "module_id": "core-verbs",
+    "module": "Core verbs",
+    "seeds": [
+      "a-fi",
+      "a-avea",
+      "a-vrea",
+      "a-putea",
+      "a-face",
+      "a-merge",
+      "a-veni",
+      "a-sti",
+      "a-manca",
+      "a-bea"
+    ]
+  },
+  {
+    "module_id": "food-and-drink",
+    "module": "Food and drink",
+    "seeds": [
+      "apa",
+      "paine",
+      "cafea",
+      "ceai",
+      "lapte",
+      "ou",
+      "carne",
+      "peste",
+      "orez",
+      "cartof",
+      "leguma",
+      "fruct",
+      "mar",
+      "bere"
+    ]
+  }
+]
