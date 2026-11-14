@@ -1,0 +1,1309 @@
+[
+  {
+    "id": "salut",
+    "ro": "salut",
+    "en": "hi; hello",
+    "type": "interjection",
+    "module_id": "first-conversations",
+    "module": "First conversations",
+    "variations": {},
+    "examples": [
+      {
+        "ro": "Salut!",
+        "en": "Hi!"
+      },
+      {
+        "ro": "Salut, Ana!",
+        "en": "Hi, Ana!"
+      },
+      {
+        "ro": "Salut! Ce faci?",
+        "en": "Hi! How are you?"
+      }
+    ],
+    "notes": "An informal greeting."
+  },
+  {
+    "id": "buna-ziua",
+    "ro": "bună ziua",
+    "en": "hello; good day",
+    "type": "phrase",
+    "module_id": "first-conversations",
+    "module": "First conversations",
+    "variations": {},
+    "examples": [
+      {
+        "ro": "Bună ziua!",
+        "en": "Hello!"
+      },
+      {
+        "ro": "Bună ziua, doamnă!",
+        "en": "Hello, ma'am!"
+      },
+      {
+        "ro": "Bună ziua! Vreau o cafea, vă rog.",
+        "en": "Hello! I want a coffee, please."
+      }
+    ],
+    "notes": "A polite daytime greeting."
+  },
+  {
+    "id": "la-revedere",
+    "ro": "la revedere",
+    "en": "goodbye",
+    "type": "phrase",
+    "module_id": "first-conversations",
+    "module": "First conversations",
+    "variations": {},
+    "examples": [
+      {
+        "ro": "La revedere!",
+        "en": "Goodbye!"
+      },
+      {
+        "ro": "La revedere, Ana!",
+        "en": "Goodbye, Ana!"
+      },
+      {
+        "ro": "Mulțumesc! La revedere!",
+        "en": "Thank you! Goodbye!"
+      }
+    ]
+  },
+  {
+    "id": "te-rog",
+    "ro": "te rog",
+    "en": "please",
+    "type": "phrase",
+    "module_id": "first-conversations",
+    "module": "First conversations",
+    "variations": {
+      "informal": "te rog",
+      "polite_or_plural": "vă rog"
+    },
+    "examples": [
+      {
+        "ro": "O apă, te rog.",
+        "en": "A water, please."
+      },
+      {
+        "ro": "Repetă, te rog.",
+        "en": "Repeat that, please."
+      },
+      {
+        "ro": "O cafea, vă rog.",
+        "en": "A coffee, please."
+      }
+    ],
+    "notes": "Use te rog with one person informally; vă rog is polite or plural."
+  },
+  {
+    "id": "multumesc",
+    "ro": "mulțumesc",
+    "en": "thank you",
+    "type": "interjection",
+    "module_id": "first-conversations",
+    "module": "First conversations",
+    "variations": {},
+    "examples": [
+      {
+        "ro": "Mulțumesc!",
+        "en": "Thank you!"
+      },
+      {
+        "ro": "Mulțumesc pentru apă.",
+        "en": "Thank you for the water."
+      },
+      {
+        "ro": "Mulțumesc mult!",
+        "en": "Thank you very much!"
+      }
+    ]
+  },
+  {
+    "id": "cu-placere",
+    "ro": "cu plăcere",
+    "en": "you're welcome",
+    "type": "phrase",
+    "module_id": "first-conversations",
+    "module": "First conversations",
+    "variations": {},
+    "examples": [
+      {
+        "ro": "Cu plăcere!",
+        "en": "You're welcome!"
+      },
+      {
+        "ro": "Cu plăcere, Ana!",
+        "en": "You're welcome, Ana!"
+      },
+      {
+        "ro": "Cu plăcere! La revedere!",
+        "en": "You're welcome! Goodbye!"
+      }
+    ]
+  },
+  {
+    "id": "scuze",
+    "ro": "scuze",
+    "en": "sorry; excuse me",
+    "type": "interjection",
+    "module_id": "first-conversations",
+    "module": "First conversations",
+    "variations": {
+      "informal": "scuză-mă",
+      "polite_or_plural": "scuzați-mă"
+    },
+    "examples": [
+      {
+        "ro": "Scuze!",
+        "en": "Sorry!"
+      },
+      {
+        "ro": "Scuze, nu înțeleg.",
+        "en": "Sorry, I don't understand."
+      },
+      {
+        "ro": "Scuzați-mă, vorbiți engleză?",
+        "en": "Excuse me, do you speak English?"
+      }
+    ]
+  },
+  {
+    "id": "da",
+    "ro": "da",
+    "en": "yes",
+    "type": "adverb",
+    "module_id": "first-conversations",
+    "module": "First conversations",
+    "variations": {},
+    "examples": [
+      {
+        "ro": "Da, vreau apă.",
+        "en": "Yes, I want water."
+      },
+      {
+        "ro": "Da, am timp.",
+        "en": "Yes, I have time."
+      },
+      {
+        "ro": "Da, putem merge.",
+        "en": "Yes, we can go."
+      }
+    ]
+  },
+  {
+    "id": "nu",
+    "ro": "nu",
+    "en": "no; not",
+    "type": "adverb",
+    "module_id": "first-conversations",
+    "module": "First conversations",
+    "variations": {},
+    "examples": [
+      {
+        "ro": "Nu, mulțumesc.",
+        "en": "No, thank you."
+      },
+      {
+        "ro": "Nu vreau cafea.",
+        "en": "I don't want coffee."
+      },
+      {
+        "ro": "Nu știu.",
+        "en": "I don't know."
+      }
+    ]
+  },
+  {
+    "id": "nu-inteleg",
+    "ro": "nu înțeleg",
+    "en": "I don't understand",
+    "type": "phrase",
+    "module_id": "first-conversations",
+    "module": "First conversations",
+    "variations": {},
+    "examples": [
+      {
+        "ro": "Nu înțeleg.",
+        "en": "I don't understand."
+      },
+      {
+        "ro": "Scuze, nu înțeleg.",
+        "en": "Sorry, I don't understand."
+      },
+      {
+        "ro": "Nu înțeleg. Puteți repeta?",
+        "en": "I don't understand. Can you repeat that?"
+      }
+    ]
+  },
+  {
+    "id": "puteti-repeta",
+    "ro": "puteți repeta?",
+    "en": "can you repeat that?",
+    "type": "phrase",
+    "module_id": "first-conversations",
+    "module": "First conversations",
+    "variations": {
+      "informal": "poți repeta?",
+      "polite_or_plural": "puteți repeta?"
+    },
+    "examples": [
+      {
+        "ro": "Puteți repeta?",
+        "en": "Can you repeat that?"
+      },
+      {
+        "ro": "Nu înțeleg. Puteți repeta?",
+        "en": "I don't understand. Can you repeat that?"
+      },
+      {
+        "ro": "Poți repeta, te rog?",
+        "en": "Can you repeat that, please?"
+      }
+    ],
+    "notes": "The main phrase is polite or plural; use poți with one person informally."
+  },
+  {
+    "id": "vorbiti-engleza",
+    "ro": "vorbiți engleză?",
+    "en": "do you speak English?",
+    "type": "phrase",
+    "module_id": "first-conversations",
+    "module": "First conversations",
+    "variations": {
+      "informal": "vorbești engleză?",
+      "polite_or_plural": "vorbiți engleză?"
+    },
+    "examples": [
+      {
+        "ro": "Vorbiți engleză?",
+        "en": "Do you speak English?"
+      },
+      {
+        "ro": "Scuze, vorbiți engleză?",
+        "en": "Excuse me, do you speak English?"
+      },
+      {
+        "ro": "Vorbești engleză?",
+        "en": "Do you speak English?"
+      }
+    ],
+    "notes": "The main phrase is polite or plural; use vorbești with one person informally."
+  },
+  {
+    "id": "eu",
+    "ro": "eu",
+    "en": "I",
+    "type": "pronoun",
+    "module_id": "subject-pronouns",
+    "module": "Subject pronouns",
+    "variations": {},
+    "examples": [
+      {
+        "ro": "Eu sunt aici.",
+        "en": "I am here."
+      },
+      {
+        "ro": "Eu am o cafea.",
+        "en": "I have a coffee."
+      },
+      {
+        "ro": "Eu vreau apă.",
+        "en": "I want water."
+      }
+    ]
+  },
+  {
+    "id": "tu",
+    "ro": "tu",
+    "en": "you",
+    "type": "pronoun",
+    "module_id": "subject-pronouns",
+    "module": "Subject pronouns",
+    "variations": {},
+    "examples": [
+      {
+        "ro": "Tu ești aici.",
+        "en": "You are here."
+      },
+      {
+        "ro": "Tu ai timp?",
+        "en": "Do you have time?"
+      },
+      {
+        "ro": "Tu vrei apă?",
+        "en": "Do you want water?"
+      }
+    ],
+    "notes": "Informal singular you. Polite singular you uses dumneavoastră and the voi verb forms."
+  },
+  {
+    "id": "el",
+    "ro": "el",
+    "en": "he",
+    "type": "pronoun",
+    "module_id": "subject-pronouns",
+    "module": "Subject pronouns",
+    "variations": {},
+    "examples": [
+      {
+        "ro": "El este aici.",
+        "en": "He is here."
+      },
+      {
+        "ro": "El are o întrebare.",
+        "en": "He has a question."
+      },
+      {
+        "ro": "El mănâncă un măr.",
+        "en": "He is eating an apple."
+      }
+    ]
+  },
+  {
+    "id": "ea",
+    "ro": "ea",
+    "en": "she",
+    "type": "pronoun",
+    "module_id": "subject-pronouns",
+    "module": "Subject pronouns",
+    "variations": {},
+    "examples": [
+      {
+        "ro": "Ea este acasă.",
+        "en": "She is at home."
+      },
+      {
+        "ro": "Ea bea ceai.",
+        "en": "She is drinking tea."
+      },
+      {
+        "ro": "Ea vine mâine.",
+        "en": "She is coming tomorrow."
+      }
+    ]
+  },
+  {
+    "id": "noi",
+    "ro": "noi",
+    "en": "we",
+    "type": "pronoun",
+    "module_id": "subject-pronouns",
+    "module": "Subject pronouns",
+    "variations": {},
+    "examples": [
+      {
+        "ro": "Noi suntem aici.",
+        "en": "We are here."
+      },
+      {
+        "ro": "Noi avem pâine.",
+        "en": "We have bread."
+      },
+      {
+        "ro": "Noi mergem acasă.",
+        "en": "We are going home."
+      }
+    ]
+  },
+  {
+    "id": "voi",
+    "ro": "voi",
+    "en": "you",
+    "type": "pronoun",
+    "module_id": "subject-pronouns",
+    "module": "Subject pronouns",
+    "variations": {},
+    "examples": [
+      {
+        "ro": "Voi vreți cafea?",
+        "en": "Do you want coffee?"
+      },
+      {
+        "ro": "Voi aveți timp?",
+        "en": "Do you have time?"
+      },
+      {
+        "ro": "Voi veniți mâine?",
+        "en": "Are you coming tomorrow?"
+      }
+    ],
+    "notes": "Informal plural you; all three examples address more than one person."
+  },
+  {
+    "id": "ei",
+    "ro": "ei",
+    "en": "they",
+    "type": "pronoun",
+    "module_id": "subject-pronouns",
+    "module": "Subject pronouns",
+    "variations": {},
+    "examples": [
+      {
+        "ro": "Ei sunt aici.",
+        "en": "They are here."
+      },
+      {
+        "ro": "Ei mănâncă orez.",
+        "en": "They are eating rice."
+      },
+      {
+        "ro": "Ei vor apă.",
+        "en": "They want water."
+      }
+    ],
+    "notes": "For a group of men or a mixed group."
+  },
+  {
+    "id": "ele",
+    "ro": "ele",
+    "en": "they",
+    "type": "pronoun",
+    "module_id": "subject-pronouns",
+    "module": "Subject pronouns",
+    "variations": {},
+    "examples": [
+      {
+        "ro": "Ele sunt acasă.",
+        "en": "They are at home."
+      },
+      {
+        "ro": "Ele beau ceai.",
+        "en": "They are drinking tea."
+      },
+      {
+        "ro": "Ele vin mâine.",
+        "en": "They are coming tomorrow."
+      }
+    ],
+    "notes": "For a group of women."
+  },
+  {
+    "id": "a-fi",
+    "ro": "a fi",
+    "en": "to be",
+    "type": "verb",
+    "module_id": "core-verbs",
+    "module": "Core verbs",
+    "variations": {
+      "present_eu": "sunt",
+      "present_tu": "ești",
+      "present_el_ea": "este",
+      "present_noi": "suntem",
+      "present_voi": "sunteți",
+      "present_ei_ele": "sunt",
+      "past_eu": "am fost",
+      "past_tu": "ai fost",
+      "past_el_ea": "a fost",
+      "past_noi": "am fost",
+      "past_voi": "ați fost",
+      "past_ei_ele": "au fost",
+      "future_eu": "o să fiu",
+      "future_tu": "o să fii",
+      "future_el_ea": "o să fie",
+      "future_noi": "o să fim",
+      "future_voi": "o să fiți",
+      "future_ei_ele": "o să fie"
+    },
+    "examples": [
+      {
+        "ro": "Sunt aici.",
+        "en": "I am here."
+      },
+      {
+        "ro": "Am fost acasă.",
+        "en": "I was at home."
+      },
+      {
+        "ro": "O să fim aici mâine.",
+        "en": "We will be here tomorrow."
+      }
+    ]
+  },
+  {
+    "id": "a-avea",
+    "ro": "a avea",
+    "en": "to have",
+    "type": "verb",
+    "module_id": "core-verbs",
+    "module": "Core verbs",
+    "variations": {
+      "present_eu": "am",
+      "present_tu": "ai",
+      "present_el_ea": "are",
+      "present_noi": "avem",
+      "present_voi": "aveți",
+      "present_ei_ele": "au",
+      "past_eu": "am avut",
+      "past_tu": "ai avut",
+      "past_el_ea": "a avut",
+      "past_noi": "am avut",
+      "past_voi": "ați avut",
+      "past_ei_ele": "au avut",
+      "future_eu": "o să am",
+      "future_tu": "o să ai",
+      "future_el_ea": "o să aibă",
+      "future_noi": "o să avem",
+      "future_voi": "o să aveți",
+      "future_ei_ele": "o să aibă"
+    },
+    "examples": [
+      {
+        "ro": "Ai o întrebare?",
+        "en": "Do you have a question?"
+      },
+      {
+        "ro": "Am avut timp.",
+        "en": "I had time."
+      },
+      {
+        "ro": "O să avem apă.",
+        "en": "We will have water."
+      }
+    ]
+  },
+  {
+    "id": "a-vrea",
+    "ro": "a vrea",
+    "en": "to want",
+    "type": "verb",
+    "module_id": "core-verbs",
+    "module": "Core verbs",
+    "variations": {
+      "present_eu": "vreau",
+      "present_tu": "vrei",
+      "present_el_ea": "vrea",
+      "present_noi": "vrem",
+      "present_voi": "vreți",
+      "present_ei_ele": "vor",
+      "past_eu": "am vrut",
+      "past_tu": "ai vrut",
+      "past_el_ea": "a vrut",
+      "past_noi": "am vrut",
+      "past_voi": "ați vrut",
+      "past_ei_ele": "au vrut",
+      "future_eu": "o să vreau",
+      "future_tu": "o să vrei",
+      "future_el_ea": "o să vrea",
+      "future_noi": "o să vrem",
+      "future_voi": "o să vreți",
+      "future_ei_ele": "o să vrea"
+    },
+    "examples": [
+      {
+        "ro": "Vreau o cafea.",
+        "en": "I want a coffee."
+      },
+      {
+        "ro": "Am vrut un ceai.",
+        "en": "I wanted a tea."
+      },
+      {
+        "ro": "O să vrei apă.",
+        "en": "You will want water."
+      }
+    ]
+  },
+  {
+    "id": "a-putea",
+    "ro": "a putea",
+    "en": "to be able to; can",
+    "type": "verb",
+    "module_id": "core-verbs",
+    "module": "Core verbs",
+    "variations": {
+      "present_eu": "pot",
+      "present_tu": "poți",
+      "present_el_ea": "poate",
+      "present_noi": "putem",
+      "present_voi": "puteți",
+      "present_ei_ele": "pot",
+      "past_eu": "am putut",
+      "past_tu": "ai putut",
+      "past_el_ea": "a putut",
+      "past_noi": "am putut",
+      "past_voi": "ați putut",
+      "past_ei_ele": "au putut",
+      "future_eu": "o să pot",
+      "future_tu": "o să poți",
+      "future_el_ea": "o să poată",
+      "future_noi": "o să putem",
+      "future_voi": "o să puteți",
+      "future_ei_ele": "o să poată"
+    },
+    "examples": [
+      {
+        "ro": "Pot să vin?",
+        "en": "Can I come?"
+      },
+      {
+        "ro": "Nu am putut să vin.",
+        "en": "I couldn't come."
+      },
+      {
+        "ro": "O să putem vorbi mâine.",
+        "en": "We will be able to talk tomorrow."
+      }
+    ]
+  },
+  {
+    "id": "a-face",
+    "ro": "a face",
+    "en": "to do; to make",
+    "type": "verb",
+    "module_id": "core-verbs",
+    "module": "Core verbs",
+    "variations": {
+      "present_eu": "fac",
+      "present_tu": "faci",
+      "present_el_ea": "face",
+      "present_noi": "facem",
+      "present_voi": "faceți",
+      "present_ei_ele": "fac",
+      "past_eu": "am făcut",
+      "past_tu": "ai făcut",
+      "past_el_ea": "a făcut",
+      "past_noi": "am făcut",
+      "past_voi": "ați făcut",
+      "past_ei_ele": "au făcut",
+      "future_eu": "o să fac",
+      "future_tu": "o să faci",
+      "future_el_ea": "o să facă",
+      "future_noi": "o să facem",
+      "future_voi": "o să faceți",
+      "future_ei_ele": "o să facă"
+    },
+    "examples": [
+      {
+        "ro": "Ce faci?",
+        "en": "What are you doing?"
+      },
+      {
+        "ro": "Am făcut o cafea.",
+        "en": "I made a coffee."
+      },
+      {
+        "ro": "O să facem mâncare.",
+        "en": "We will make food."
+      }
+    ]
+  },
+  {
+    "id": "a-merge",
+    "ro": "a merge",
+    "en": "to go",
+    "type": "verb",
+    "module_id": "core-verbs",
+    "module": "Core verbs",
+    "variations": {
+      "present_eu": "merg",
+      "present_tu": "mergi",
+      "present_el_ea": "merge",
+      "present_noi": "mergem",
+      "present_voi": "mergeți",
+      "present_ei_ele": "merg",
+      "past_eu": "am mers",
+      "past_tu": "ai mers",
+      "past_el_ea": "a mers",
+      "past_noi": "am mers",
+      "past_voi": "ați mers",
+      "past_ei_ele": "au mers",
+      "future_eu": "o să merg",
+      "future_tu": "o să mergi",
+      "future_el_ea": "o să meargă",
+      "future_noi": "o să mergem",
+      "future_voi": "o să mergeți",
+      "future_ei_ele": "o să meargă"
+    },
+    "examples": [
+      {
+        "ro": "Merg acasă.",
+        "en": "I am going home."
+      },
+      {
+        "ro": "Am mers la magazin.",
+        "en": "I went to the shop."
+      },
+      {
+        "ro": "O să mergem mâine.",
+        "en": "We will go tomorrow."
+      }
+    ]
+  },
+  {
+    "id": "a-veni",
+    "ro": "a veni",
+    "en": "to come",
+    "type": "verb",
+    "module_id": "core-verbs",
+    "module": "Core verbs",
+    "variations": {
+      "present_eu": "vin",
+      "present_tu": "vii",
+      "present_el_ea": "vine",
+      "present_noi": "venim",
+      "present_voi": "veniți",
+      "present_ei_ele": "vin",
+      "past_eu": "am venit",
+      "past_tu": "ai venit",
+      "past_el_ea": "a venit",
+      "past_noi": "am venit",
+      "past_voi": "ați venit",
+      "past_ei_ele": "au venit",
+      "future_eu": "o să vin",
+      "future_tu": "o să vii",
+      "future_el_ea": "o să vină",
+      "future_noi": "o să venim",
+      "future_voi": "o să veniți",
+      "future_ei_ele": "o să vină"
+    },
+    "examples": [
+      {
+        "ro": "Vii cu noi?",
+        "en": "Are you coming with us?"
+      },
+      {
+        "ro": "Ea a venit ieri.",
+        "en": "She came yesterday."
+      },
+      {
+        "ro": "Ei o să vină mâine.",
+        "en": "They will come tomorrow."
+      }
+    ]
+  },
+  {
+    "id": "a-sti",
+    "ro": "a ști",
+    "en": "to know",
+    "type": "verb",
+    "module_id": "core-verbs",
+    "module": "Core verbs",
+    "variations": {
+      "present_eu": "știu",
+      "present_tu": "știi",
+      "present_el_ea": "știe",
+      "present_noi": "știm",
+      "present_voi": "știți",
+      "present_ei_ele": "știu",
+      "past_eu": "am știut",
+      "past_tu": "ai știut",
+      "past_el_ea": "a știut",
+      "past_noi": "am știut",
+      "past_voi": "ați știut",
+      "past_ei_ele": "au știut",
+      "future_eu": "o să știu",
+      "future_tu": "o să știi",
+      "future_el_ea": "o să știe",
+      "future_noi": "o să știm",
+      "future_voi": "o să știți",
+      "future_ei_ele": "o să știe"
+    },
+    "examples": [
+      {
+        "ro": "Nu știu.",
+        "en": "I don't know."
+      },
+      {
+        "ro": "Nu am știut.",
+        "en": "I didn't know."
+      },
+      {
+        "ro": "O să știi mâine.",
+        "en": "You will know tomorrow."
+      }
+    ]
+  },
+  {
+    "id": "a-manca",
+    "ro": "a mânca",
+    "en": "to eat",
+    "type": "verb",
+    "module_id": "core-verbs",
+    "module": "Core verbs",
+    "variations": {
+      "present_eu": "mănânc",
+      "present_tu": "mănânci",
+      "present_el_ea": "mănâncă",
+      "present_noi": "mâncăm",
+      "present_voi": "mâncați",
+      "present_ei_ele": "mănâncă",
+      "past_eu": "am mâncat",
+      "past_tu": "ai mâncat",
+      "past_el_ea": "a mâncat",
+      "past_noi": "am mâncat",
+      "past_voi": "ați mâncat",
+      "past_ei_ele": "au mâncat",
+      "future_eu": "o să mănânc",
+      "future_tu": "o să mănânci",
+      "future_el_ea": "o să mănânce",
+      "future_noi": "o să mâncăm",
+      "future_voi": "o să mâncați",
+      "future_ei_ele": "o să mănânce"
+    },
+    "examples": [
+      {
+        "ro": "Mănânc un măr.",
+        "en": "I am eating an apple."
+      },
+      {
+        "ro": "Am mâncat orez.",
+        "en": "I ate rice."
+      },
+      {
+        "ro": "O să mâncăm pește.",
+        "en": "We will eat fish."
+      }
+    ]
+  },
+  {
+    "id": "a-bea",
+    "ro": "a bea",
+    "en": "to drink",
+    "type": "verb",
+    "module_id": "core-verbs",
+    "module": "Core verbs",
+    "variations": {
+      "present_eu": "beau",
+      "present_tu": "bei",
+      "present_el_ea": "bea",
+      "present_noi": "bem",
+      "present_voi": "beți",
+      "present_ei_ele": "beau",
+      "past_eu": "am băut",
+      "past_tu": "ai băut",
+      "past_el_ea": "a băut",
+      "past_noi": "am băut",
+      "past_voi": "ați băut",
+      "past_ei_ele": "au băut",
+      "future_eu": "o să beau",
+      "future_tu": "o să bei",
+      "future_el_ea": "o să bea",
+      "future_noi": "o să bem",
+      "future_voi": "o să beți",
+      "future_ei_ele": "o să bea"
+    },
+    "examples": [
+      {
+        "ro": "Beau apă.",
+        "en": "I am drinking water."
+      },
+      {
+        "ro": "Am băut un ceai.",
+        "en": "I drank a tea."
+      },
+      {
+        "ro": "Ea o să bea lapte.",
+        "en": "She will drink milk."
+      }
+    ]
+  },
+  {
+    "id": "apa",
+    "ro": "apă",
+    "en": "water",
+    "type": "noun",
+    "module_id": "food-and-drink",
+    "module": "Food and drink",
+    "variations": {
+      "singular": "apă",
+      "plural": "ape",
+      "singular_definite": "apa",
+      "plural_definite": "apele"
+    },
+    "examples": [
+      {
+        "ro": "Vreau apă, te rog.",
+        "en": "I want water, please."
+      },
+      {
+        "ro": "Apa este rece.",
+        "en": "The water is cold."
+      },
+      {
+        "ro": "Am două sticle de apă.",
+        "en": "I have two bottles of water."
+      }
+    ],
+    "gender": "feminine",
+    "notes": "For drinking, apă is usually a mass noun. Ape means waters or bodies of water."
+  },
+  {
+    "id": "paine",
+    "ro": "pâine",
+    "en": "bread",
+    "type": "noun",
+    "module_id": "food-and-drink",
+    "module": "Food and drink",
+    "variations": {
+      "singular": "pâine",
+      "plural": "pâini",
+      "singular_definite": "pâinea",
+      "plural_definite": "pâinile"
+    },
+    "examples": [
+      {
+        "ro": "Mănânc pâine.",
+        "en": "I am eating bread."
+      },
+      {
+        "ro": "Pâinea este bună.",
+        "en": "The bread is good."
+      },
+      {
+        "ro": "Vreau două pâini.",
+        "en": "I want two loaves of bread."
+      }
+    ],
+    "gender": "feminine"
+  },
+  {
+    "id": "cafea",
+    "ro": "cafea",
+    "en": "coffee",
+    "type": "noun",
+    "module_id": "food-and-drink",
+    "module": "Food and drink",
+    "variations": {
+      "singular": "cafea",
+      "plural": "cafele",
+      "singular_definite": "cafeaua",
+      "plural_definite": "cafelele"
+    },
+    "examples": [
+      {
+        "ro": "Vreau o cafea, te rog.",
+        "en": "I want a coffee, please."
+      },
+      {
+        "ro": "Cafeaua este caldă.",
+        "en": "The coffee is warm."
+      },
+      {
+        "ro": "Două cafele, vă rog.",
+        "en": "Two coffees, please."
+      }
+    ],
+    "gender": "feminine"
+  },
+  {
+    "id": "ceai",
+    "ro": "ceai",
+    "en": "tea",
+    "type": "noun",
+    "module_id": "food-and-drink",
+    "module": "Food and drink",
+    "variations": {
+      "singular": "ceai",
+      "plural": "ceaiuri",
+      "singular_definite": "ceaiul",
+      "plural_definite": "ceaiurile"
+    },
+    "examples": [
+      {
+        "ro": "Beau un ceai.",
+        "en": "I am drinking a tea."
+      },
+      {
+        "ro": "Ceaiul este cald.",
+        "en": "The tea is warm."
+      },
+      {
+        "ro": "Vrem două ceaiuri.",
+        "en": "We want two teas."
+      }
+    ],
+    "gender": "neuter"
+  },
+  {
+    "id": "lapte",
+    "ro": "lapte",
+    "en": "milk",
+    "type": "noun",
+    "module_id": "food-and-drink",
+    "module": "Food and drink",
+    "variations": {
+      "singular": "lapte",
+      "singular_definite": "laptele"
+    },
+    "examples": [
+      {
+        "ro": "Beau lapte.",
+        "en": "I am drinking milk."
+      },
+      {
+        "ro": "Laptele este rece.",
+        "en": "The milk is cold."
+      },
+      {
+        "ro": "Vreau o cafea cu lapte.",
+        "en": "I want a coffee with milk."
+      }
+    ],
+    "gender": "neuter",
+    "notes": "Usually a mass noun. Uncommon plural forms are omitted from this beginner dictionary."
+  },
+  {
+    "id": "ou",
+    "ro": "ou",
+    "en": "egg",
+    "type": "noun",
+    "module_id": "food-and-drink",
+    "module": "Food and drink",
+    "variations": {
+      "singular": "ou",
+      "plural": "ouă",
+      "singular_definite": "oul",
+      "plural_definite": "ouăle"
+    },
+    "examples": [
+      {
+        "ro": "Vreau un ou.",
+        "en": "I want an egg."
+      },
+      {
+        "ro": "Am două ouă.",
+        "en": "I have two eggs."
+      },
+      {
+        "ro": "Ouăle sunt aici.",
+        "en": "The eggs are here."
+      }
+    ],
+    "gender": "neuter"
+  },
+  {
+    "id": "carne",
+    "ro": "carne",
+    "en": "meat",
+    "type": "noun",
+    "module_id": "food-and-drink",
+    "module": "Food and drink",
+    "variations": {
+      "singular": "carne",
+      "plural": "cărnuri",
+      "singular_definite": "carnea",
+      "plural_definite": "cărnurile"
+    },
+    "examples": [
+      {
+        "ro": "Mănânc carne.",
+        "en": "I eat meat."
+      },
+      {
+        "ro": "Carnea este bună.",
+        "en": "The meat is good."
+      },
+      {
+        "ro": "Nu vreau carne.",
+        "en": "I don't want meat."
+      }
+    ],
+    "gender": "feminine",
+    "notes": "Usually a mass noun. Cărnuri refers to kinds or varieties of meat."
+  },
+  {
+    "id": "peste",
+    "ro": "pește",
+    "en": "fish",
+    "type": "noun",
+    "module_id": "food-and-drink",
+    "module": "Food and drink",
+    "variations": {
+      "singular": "pește",
+      "plural": "pești",
+      "singular_definite": "peștele",
+      "plural_definite": "peștii"
+    },
+    "examples": [
+      {
+        "ro": "Mănânc pește.",
+        "en": "I am eating fish."
+      },
+      {
+        "ro": "Peștele este bun.",
+        "en": "The fish is good."
+      },
+      {
+        "ro": "Am doi pești.",
+        "en": "I have two fish."
+      }
+    ],
+    "gender": "masculine"
+  },
+  {
+    "id": "orez",
+    "ro": "orez",
+    "en": "rice",
+    "type": "noun",
+    "module_id": "food-and-drink",
+    "module": "Food and drink",
+    "variations": {
+      "singular": "orez",
+      "singular_definite": "orezul"
+    },
+    "examples": [
+      {
+        "ro": "Mănânc orez.",
+        "en": "I am eating rice."
+      },
+      {
+        "ro": "Orezul este bun.",
+        "en": "The rice is good."
+      },
+      {
+        "ro": "Vreau orez cu legume.",
+        "en": "I want rice with vegetables."
+      }
+    ],
+    "gender": "masculine",
+    "notes": "Usually a mass noun. Uncommon plural forms are omitted from this beginner dictionary."
+  },
+  {
+    "id": "cartof",
+    "ro": "cartof",
+    "en": "potato",
+    "type": "noun",
+    "module_id": "food-and-drink",
+    "module": "Food and drink",
+    "variations": {
+      "singular": "cartof",
+      "plural": "cartofi",
+      "singular_definite": "cartoful",
+      "plural_definite": "cartofii"
+    },
+    "examples": [
+      {
+        "ro": "Am un cartof.",
+        "en": "I have a potato."
+      },
+      {
+        "ro": "Vreau doi cartofi.",
+        "en": "I want two potatoes."
+      },
+      {
+        "ro": "Cartofii sunt aici.",
+        "en": "The potatoes are here."
+      }
+    ],
+    "gender": "masculine"
+  },
+  {
+    "id": "leguma",
+    "ro": "legumă",
+    "en": "vegetable",
+    "type": "noun",
+    "module_id": "food-and-drink",
+    "module": "Food and drink",
+    "variations": {
+      "singular": "legumă",
+      "plural": "legume",
+      "singular_definite": "leguma",
+      "plural_definite": "legumele"
+    },
+    "examples": [
+      {
+        "ro": "Vreau o legumă.",
+        "en": "I want a vegetable."
+      },
+      {
+        "ro": "Mănânc legume.",
+        "en": "I eat vegetables."
+      },
+      {
+        "ro": "Legumele sunt bune.",
+        "en": "The vegetables are good."
+      }
+    ],
+    "gender": "feminine"
+  },
+  {
+    "id": "fruct",
+    "ro": "fruct",
+    "en": "fruit",
+    "type": "noun",
+    "module_id": "food-and-drink",
+    "module": "Food and drink",
+    "variations": {
+      "singular": "fruct",
+      "plural": "fructe",
+      "singular_definite": "fructul",
+      "plural_definite": "fructele"
+    },
+    "examples": [
+      {
+        "ro": "Vreau un fruct.",
+        "en": "I want a piece of fruit."
+      },
+      {
+        "ro": "Mănânc fructe.",
+        "en": "I eat fruit."
+      },
+      {
+        "ro": "Fructele sunt bune.",
+        "en": "The fruit is good."
+      }
+    ],
+    "gender": "neuter"
+  },
+  {
+    "id": "mar",
+    "ro": "măr",
+    "en": "apple",
+    "type": "noun",
+    "module_id": "food-and-drink",
+    "module": "Food and drink",
+    "variations": {
+      "singular": "măr",
+      "plural": "mere",
+      "singular_definite": "mărul",
+      "plural_definite": "merele"
+    },
+    "examples": [
+      {
+        "ro": "Vreau un măr.",
+        "en": "I want an apple."
+      },
+      {
+        "ro": "Am două mere.",
+        "en": "I have two apples."
+      },
+      {
+        "ro": "Mărul este bun.",
+        "en": "The apple is good."
+      }
+    ],
+    "gender": "neuter"
+  },
+  {
+    "id": "bere",
+    "ro": "bere",
+    "en": "beer",
+    "type": "noun",
+    "module_id": "food-and-drink",
+    "module": "Food and drink",
+    "variations": {
+      "singular": "bere",
+      "plural": "beri",
+      "singular_definite": "berea",
+      "plural_definite": "berile"
+    },
+    "examples": [
+      {
+        "ro": "Vreau o bere, te rog.",
+        "en": "I want a beer, please."
+      },
+      {
+        "ro": "Berea este rece.",
+        "en": "The beer is cold."
+      },
+      {
+        "ro": "Două beri, vă rog.",
+        "en": "Two beers, please."
+      }
+    ],
+    "gender": "feminine"
+  }
+]

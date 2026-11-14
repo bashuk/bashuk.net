@@ -41,8 +41,8 @@ This repository is a Hugo site using the Book theme. Its configuration is in
 
 - `static/ro/seeds.json`: the approved pilot curriculum. Hugo will serve this
   at `/ro/seeds.json` when the site is built and deployed.
-- `static/ro/dictionary.json`: planned location for the expanded dictionary;
-  it does not exist yet.
+- `static/ro/dictionary.json`: the pilot dictionary, containing all 44 approved
+  seeds with grammatical forms and three translated examples per entry.
 - `static/ro/context.md`: this public project context document, served at
   `/ro/context.md` when the site is built and deployed. Keep it limited to
   public project decisions; do not add credentials, personal information, or
@@ -90,6 +90,11 @@ A JSON array of self-contained entries. Every object includes:
 - `variations`: an object mapping short grammatical form keys to Romanian forms.
 - `examples`: a few short sentence objects, each with `ro` and `en` fields.
 
+The pilot also uses `gender` on every noun (`masculine`, `feminine`, or
+`neuter`) and optional English `notes` for practical usage distinctions,
+such as informal/polite address or mass nouns. Notes are displayable learning
+content; the app must not rely on parsing them to identify grammatical forms.
+
 ```json
 [
   {
@@ -123,16 +128,27 @@ The seeds file is the curriculum input; the dictionary is the runtime resource.
 - **Verbs:** cover present, a common past tense, and a conversational future
   construction for all six conjugation groups: `eu`, `tu`, `el/ea`, `noi`,
   `voi`, and `ei/ele`. Use the compound past (*perfect compus*) and the
-  conversational `o să` future as the initial approach discussed with the user.
-  Short keys such as `present_eu`, `past_eu`, and `future_eu` were proposed;
-  complete and use a consistent key scheme when implementing the dictionary.
+  conversational `o să` future. The implemented keys are `{tense}_{subject}`,
+  where tense is `present`, `past`, or `future`, and subject is `eu`, `tu`,
+  `el_ea`, `noi`, `voi`, or `ei_ele`: 18 forms per verb. Values omit the subject
+  pronoun. For example, `past_eu` is `am avut` and `future_el_ea` is `o să aibă`
+  for `a-avea`. Future forms use the subjunctive, which can differ from the
+  present indicative; do not generate them by simply prefixing present forms.
 - **Nouns:** include grammatical gender, singular and plural forms, and useful
-  definite forms. Romanian attaches the definite article to the noun. The
-  exact representation for noun gender has not been finalized.
+  definite forms. Romanian attaches the definite article to the noun. Keys are
+  `singular`, `plural`, `singular_definite`, and `plural_definite`, with noun
+  gender in the top-level `gender` field. For `lapte` and `orez`, uncommon
+  plurals are deliberately omitted: these entries have only `singular` and
+  `singular_definite`, with a usage note. Missing forms are absent keys, not
+  empty strings or invented plurals. An app should offer the forms that exist.
 - **Adjectives:** include masculine/feminine × singular/plural forms.
 - **Other types and phrases:** include relevant forms without forcing every
-  entry into the same conjugation or declension table. Useful formal/informal
-  phrase variants can be handled during dictionary design.
+  entry into the same conjugation or declension table. The pilot uses
+  `informal` and `polite_or_plural` keys for useful phrase variants. Subject
+  pronouns have empty `variations` objects because their subject forms are
+  already separate seeds; object and possessive forms are postponed. The
+  word types used in this pilot are `phrase`, `interjection`, `adverb`,
+  `pronoun`, `verb`, and `noun`.
 - Postpone detailed case rules, uncommon constructions, and exhaustive
   alternatives. Keep examples short, practical, and natural.
 
@@ -157,9 +173,22 @@ the next two establish subjects and common actions; the final module supplies
 concrete vocabulary for simple requests and sentences. Read `seeds.json` for
 the exact approved IDs and order.
 
-JSON parsing, module and seed counts, unique module IDs, unique seed IDs, and
-seed ID formatting have been checked. Dictionary entries, translations,
-inflections, and exercises have not been generated or validated yet.
+The user has approved the pilot dictionary: **44 entries, 132 translated
+examples, and 180 verb forms**. Its IDs and order exactly match `seeds.json`.
+JSON structure, duplicate keys and IDs, module metadata, expected grammatical
+form keys, translated example coverage, and Romanian Unicode have been checked.
+Exercises and the app have not been built. The next step is the user's app
+requirements.
+
+### Language reference checks
+
+Entries and examples were authored for this pilot. Available verb inflections
+and noun forms were cross-checked against the public
+[UniMorph Romanian tables](https://github.com/unimorph/ron). That reference
+does not cover every pilot entry; remaining forms and translations were
+manually reviewed. There has been no independent language review. These
+checks do not establish a frequency ranking or replace the future curriculum
+source-selection work.
 
 ## Plan
 
@@ -169,11 +198,11 @@ inflections, and exercises have not been generated or validated yet.
 - [x] Create and validate the pilot: four modules, 44 unique seeds.
 - [x] Obtain user approval of the pilot seeds.
 - [x] Record project decisions and remaining work in this handoff document.
-- [ ] Generate `dictionary.json` for the approved pilot, finalizing grammatical
-  form keys and noun gender representation as needed.
-- [ ] Check pilot entries for complete seed coverage, correct module metadata,
+- [x] Generate `dictionary.json` for the approved pilot, finalizing grammatical
+  form keys and noun gender representation.
+- [x] Check pilot entries for complete seed coverage, correct module metadata,
   useful grammatical forms, Romanian diacritics, and translated examples.
-- [ ] Review the dictionary pilot with the user.
+- [x] Review the dictionary pilot with the user and obtain approval.
 - [ ] Obtain the user's separate app requirements and build the `/ro/` app
   using the pilot dictionary.
 - [ ] Verify the pilot app's learning flows and deploy when authorized.
@@ -184,6 +213,6 @@ inflections, and exercises have not been generated or validated yet.
   that the app works with the expanded content.
 
 The implementation sequence is **pilot seeds and dictionary → pilot app →
-full 1,000-seed curriculum and dictionary**. The immediate next content step
-is the pilot dictionary. The user will describe the app separately; use the
-pilot to test the learning experience before expanding the content.
+full 1,000-seed curriculum and dictionary**. The pilot seeds and dictionary
+are approved. Await the user's app requirements before implementing the app;
+use the pilot to test the learning experience before expanding the content.
