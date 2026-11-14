@@ -21,7 +21,19 @@
         "en": "Hi! How are you?"
       }
     ],
-    "notes": "An informal greeting."
+    "notes": "An informal greeting.",
+    "accepted_answers": {
+      "en": [
+        "hi",
+        "hello",
+        "hey",
+        "hi; hello"
+      ],
+      "ro": [
+        "salut"
+      ]
+    },
+    "prompt_en": "hello (informal)"
   },
   {
     "id": "buna-ziua",
@@ -45,7 +57,19 @@
         "en": "Hello! I want a coffee, please."
       }
     ],
-    "notes": "A polite daytime greeting."
+    "notes": "A polite daytime greeting.",
+    "accepted_answers": {
+      "en": [
+        "hello",
+        "good day",
+        "good afternoon",
+        "hello; good day"
+      ],
+      "ro": [
+        "bună ziua"
+      ]
+    },
+    "prompt_en": "hello (polite, daytime)"
   },
   {
     "id": "la-revedere",
@@ -68,7 +92,17 @@
         "ro": "Mulțumesc! La revedere!",
         "en": "Thank you! Goodbye!"
       }
-    ]
+    ],
+    "accepted_answers": {
+      "en": [
+        "goodbye",
+        "bye",
+        "good bye"
+      ],
+      "ro": [
+        "la revedere"
+      ]
+    }
   },
   {
     "id": "te-rog",
@@ -95,7 +129,16 @@
         "en": "A coffee, please."
       }
     ],
-    "notes": "Use te rog with one person informally; vă rog is polite or plural."
+    "notes": "Use te rog with one person informally; vă rog is polite or plural.",
+    "accepted_answers": {
+      "en": [
+        "please"
+      ],
+      "ro": [
+        "te rog"
+      ]
+    },
+    "prompt_en": "please (informal, singular)"
   },
   {
     "id": "multumesc",
@@ -118,7 +161,16 @@
         "ro": "Mulțumesc mult!",
         "en": "Thank you very much!"
       }
-    ]
+    ],
+    "accepted_answers": {
+      "en": [
+        "thank you",
+        "thanks"
+      ],
+      "ro": [
+        "mulțumesc"
+      ]
+    }
   },
   {
     "id": "cu-placere",
@@ -141,7 +193,17 @@
         "ro": "Cu plăcere! La revedere!",
         "en": "You're welcome! Goodbye!"
       }
-    ]
+    ],
+    "accepted_answers": {
+      "en": [
+        "you're welcome",
+        "you are welcome",
+        "youre welcome"
+      ],
+      "ro": [
+        "cu plăcere"
+      ]
+    }
   },
   {
     "id": "scuze",
@@ -167,7 +229,20 @@
         "ro": "Scuzați-mă, vorbiți engleză?",
         "en": "Excuse me, do you speak English?"
       }
-    ]
+    ],
+    "accepted_answers": {
+      "en": [
+        "sorry",
+        "excuse me",
+        "pardon me",
+        "sorry; excuse me"
+      ],
+      "ro": [
+        "scuze",
+        "scuză-mă",
+        "scuzați-mă"
+      ]
+    }
   },
   {
     "id": "da",
@@ -190,7 +265,15 @@
         "ro": "Da, putem merge.",
         "en": "Yes, we can go."
       }
-    ]
+    ],
+    "accepted_answers": {
+      "en": [
+        "yes"
+      ],
+      "ro": [
+        "da"
+      ]
+    }
   },
   {
     "id": "nu",
@@ -213,7 +296,17 @@
         "ro": "Nu știu.",
         "en": "I don't know."
       }
-    ]
+    ],
+    "accepted_answers": {
+      "en": [
+        "no",
+        "not",
+        "no; not"
+      ],
+      "ro": [
+        "nu"
+      ]
+    }
   },
   {
     "id": "nu-inteleg",
@@ -236,7 +329,18 @@
         "ro": "Nu înțeleg. Puteți repeta?",
         "en": "I don't understand. Can you repeat that?"
       }
-    ]
+    ],
+    "accepted_answers": {
+      "en": [
+        "I don't understand",
+        "I do not understand",
+        "don't understand",
+        "do not understand"
+      ],
+      "ro": [
+        "nu înțeleg"
+      ]
+    }
   },
   {
     "id": "puteti-repeta",
@@ -263,7 +367,23 @@
         "en": "Can you repeat that, please?"
       }
     ],
-    "notes": "The main phrase is polite or plural; use poți with one person informally."
+    "notes": "The main phrase is polite or plural; use poți with one person informally.",
+    "accepted_answers": {
+      "en": [
+        "can you repeat that",
+        "can you repeat",
+        "could you repeat that",
+        "could you repeat",
+        "can you say that again",
+        "could you say that again",
+        "can you repeat that?"
+      ],
+      "ro": [
+        "puteți repeta?",
+        "puteți să repetați?"
+      ]
+    },
+    "prompt_en": "can you repeat that? (polite or plural)"
   },
   {
     "id": "vorbiti-engleza",
@@ -290,7 +410,18 @@
         "en": "Do you speak English?"
       }
     ],
-    "notes": "The main phrase is polite or plural; use vorbești with one person informally."
+    "notes": "The main phrase is polite or plural; use vorbești with one person informally.",
+    "accepted_answers": {
+      "en": [
+        "do you speak English",
+        "can you speak English",
+        "do you speak English?"
+      ],
+      "ro": [
+        "vorbiți engleză?"
+      ]
+    },
+    "prompt_en": "do you speak English? (polite or plural)"
   },
   {
     "id": "eu",
@@ -313,7 +444,15 @@
         "ro": "Eu vreau apă.",
         "en": "I want water."
       }
-    ]
+    ],
+    "accepted_answers": {
+      "en": [
+        "I"
+      ],
+      "ro": [
+        "eu"
+      ]
+    }
   },
   {
     "id": "tu",
@@ -337,7 +476,16 @@
         "en": "Do you want water?"
       }
     ],
-    "notes": "Informal singular you. Polite singular you uses dumneavoastră and the voi verb forms."
+    "notes": "Informal singular you. Polite singular you uses dumneavoastră and the voi verb forms.",
+    "accepted_answers": {
+      "en": [
+        "you"
+      ],
+      "ro": [
+        "tu"
+      ]
+    },
+    "prompt_en": "you (informal, singular)"
   },
   {
     "id": "el",
@@ -360,7 +508,15 @@
         "ro": "El mănâncă un măr.",
         "en": "He is eating an apple."
       }
-    ]
+    ],
+    "accepted_answers": {
+      "en": [
+        "he"
+      ],
+      "ro": [
+        "el"
+      ]
+    }
   },
   {
     "id": "ea",
@@ -383,7 +539,15 @@
         "ro": "Ea vine mâine.",
         "en": "She is coming tomorrow."
       }
-    ]
+    ],
+    "accepted_answers": {
+      "en": [
+        "she"
+      ],
+      "ro": [
+        "ea"
+      ]
+    }
   },
   {
     "id": "noi",
@@ -406,7 +570,15 @@
         "ro": "Noi mergem acasă.",
         "en": "We are going home."
       }
-    ]
+    ],
+    "accepted_answers": {
+      "en": [
+        "we"
+      ],
+      "ro": [
+        "noi"
+      ]
+    }
   },
   {
     "id": "voi",
@@ -430,7 +602,16 @@
         "en": "Are you coming tomorrow?"
       }
     ],
-    "notes": "Informal plural you; all three examples address more than one person."
+    "notes": "Informal plural you; all three examples address more than one person.",
+    "accepted_answers": {
+      "en": [
+        "you"
+      ],
+      "ro": [
+        "voi"
+      ]
+    },
+    "prompt_en": "you (informal, plural)"
   },
   {
     "id": "ei",
@@ -454,7 +635,16 @@
         "en": "They want water."
       }
     ],
-    "notes": "For a group of men or a mixed group."
+    "notes": "For a group of men or a mixed group.",
+    "accepted_answers": {
+      "en": [
+        "they"
+      ],
+      "ro": [
+        "ei"
+      ]
+    },
+    "prompt_en": "they (masculine or mixed group)"
   },
   {
     "id": "ele",
@@ -478,7 +668,16 @@
         "en": "They are coming tomorrow."
       }
     ],
-    "notes": "For a group of women."
+    "notes": "For a group of women.",
+    "accepted_answers": {
+      "en": [
+        "they"
+      ],
+      "ro": [
+        "ele"
+      ]
+    },
+    "prompt_en": "they (feminine group)"
   },
   {
     "id": "a-fi",
@@ -520,7 +719,17 @@
         "ro": "O să fim aici mâine.",
         "en": "We will be here tomorrow."
       }
-    ]
+    ],
+    "accepted_answers": {
+      "en": [
+        "to be",
+        "be"
+      ],
+      "ro": [
+        "a fi",
+        "fi"
+      ]
+    }
   },
   {
     "id": "a-avea",
@@ -562,7 +771,17 @@
         "ro": "O să avem apă.",
         "en": "We will have water."
       }
-    ]
+    ],
+    "accepted_answers": {
+      "en": [
+        "to have",
+        "have"
+      ],
+      "ro": [
+        "a avea",
+        "avea"
+      ]
+    }
   },
   {
     "id": "a-vrea",
@@ -604,7 +823,17 @@
         "ro": "O să vrei apă.",
         "en": "You will want water."
       }
-    ]
+    ],
+    "accepted_answers": {
+      "en": [
+        "to want",
+        "want"
+      ],
+      "ro": [
+        "a vrea",
+        "vrea"
+      ]
+    }
   },
   {
     "id": "a-putea",
@@ -646,7 +875,19 @@
         "ro": "O să putem vorbi mâine.",
         "en": "We will be able to talk tomorrow."
       }
-    ]
+    ],
+    "accepted_answers": {
+      "en": [
+        "to be able to",
+        "be able to",
+        "can",
+        "to be able to; can"
+      ],
+      "ro": [
+        "a putea",
+        "putea"
+      ]
+    }
   },
   {
     "id": "a-face",
@@ -688,7 +929,20 @@
         "ro": "O să facem mâncare.",
         "en": "We will make food."
       }
-    ]
+    ],
+    "accepted_answers": {
+      "en": [
+        "to do",
+        "do",
+        "to make",
+        "make",
+        "to do; to make"
+      ],
+      "ro": [
+        "a face",
+        "face"
+      ]
+    }
   },
   {
     "id": "a-merge",
@@ -730,7 +984,17 @@
         "ro": "O să mergem mâine.",
         "en": "We will go tomorrow."
       }
-    ]
+    ],
+    "accepted_answers": {
+      "en": [
+        "to go",
+        "go"
+      ],
+      "ro": [
+        "a merge",
+        "merge"
+      ]
+    }
   },
   {
     "id": "a-veni",
@@ -772,7 +1036,17 @@
         "ro": "Ei o să vină mâine.",
         "en": "They will come tomorrow."
       }
-    ]
+    ],
+    "accepted_answers": {
+      "en": [
+        "to come",
+        "come"
+      ],
+      "ro": [
+        "a veni",
+        "veni"
+      ]
+    }
   },
   {
     "id": "a-sti",
@@ -814,7 +1088,17 @@
         "ro": "O să știi mâine.",
         "en": "You will know tomorrow."
       }
-    ]
+    ],
+    "accepted_answers": {
+      "en": [
+        "to know",
+        "know"
+      ],
+      "ro": [
+        "a ști",
+        "ști"
+      ]
+    }
   },
   {
     "id": "a-manca",
@@ -856,7 +1140,17 @@
         "ro": "O să mâncăm pește.",
         "en": "We will eat fish."
       }
-    ]
+    ],
+    "accepted_answers": {
+      "en": [
+        "to eat",
+        "eat"
+      ],
+      "ro": [
+        "a mânca",
+        "mânca"
+      ]
+    }
   },
   {
     "id": "a-bea",
@@ -898,7 +1192,17 @@
         "ro": "Ea o să bea lapte.",
         "en": "She will drink milk."
       }
-    ]
+    ],
+    "accepted_answers": {
+      "en": [
+        "to drink",
+        "drink"
+      ],
+      "ro": [
+        "a bea",
+        "bea"
+      ]
+    }
   },
   {
     "id": "apa",
@@ -928,7 +1232,15 @@
       }
     ],
     "gender": "feminine",
-    "notes": "For drinking, apă is usually a mass noun. Ape means waters or bodies of water."
+    "notes": "For drinking, apă is usually a mass noun. Ape means waters or bodies of water.",
+    "accepted_answers": {
+      "en": [
+        "water"
+      ],
+      "ro": [
+        "apă"
+      ]
+    }
   },
   {
     "id": "paine",
@@ -957,7 +1269,15 @@
         "en": "I want two loaves of bread."
       }
     ],
-    "gender": "feminine"
+    "gender": "feminine",
+    "accepted_answers": {
+      "en": [
+        "bread"
+      ],
+      "ro": [
+        "pâine"
+      ]
+    }
   },
   {
     "id": "cafea",
@@ -986,7 +1306,15 @@
         "en": "Two coffees, please."
       }
     ],
-    "gender": "feminine"
+    "gender": "feminine",
+    "accepted_answers": {
+      "en": [
+        "coffee"
+      ],
+      "ro": [
+        "cafea"
+      ]
+    }
   },
   {
     "id": "ceai",
@@ -1015,7 +1343,15 @@
         "en": "We want two teas."
       }
     ],
-    "gender": "neuter"
+    "gender": "neuter",
+    "accepted_answers": {
+      "en": [
+        "tea"
+      ],
+      "ro": [
+        "ceai"
+      ]
+    }
   },
   {
     "id": "lapte",
@@ -1043,7 +1379,15 @@
       }
     ],
     "gender": "neuter",
-    "notes": "Usually a mass noun. Uncommon plural forms are omitted from this beginner dictionary."
+    "notes": "Usually a mass noun. Uncommon plural forms are omitted from this beginner dictionary.",
+    "accepted_answers": {
+      "en": [
+        "milk"
+      ],
+      "ro": [
+        "lapte"
+      ]
+    }
   },
   {
     "id": "ou",
@@ -1072,7 +1416,16 @@
         "en": "The eggs are here."
       }
     ],
-    "gender": "neuter"
+    "gender": "neuter",
+    "accepted_answers": {
+      "en": [
+        "egg",
+        "an egg"
+      ],
+      "ro": [
+        "ou"
+      ]
+    }
   },
   {
     "id": "carne",
@@ -1102,7 +1455,15 @@
       }
     ],
     "gender": "feminine",
-    "notes": "Usually a mass noun. Cărnuri refers to kinds or varieties of meat."
+    "notes": "Usually a mass noun. Cărnuri refers to kinds or varieties of meat.",
+    "accepted_answers": {
+      "en": [
+        "meat"
+      ],
+      "ro": [
+        "carne"
+      ]
+    }
   },
   {
     "id": "peste",
@@ -1131,7 +1492,15 @@
         "en": "I have two fish."
       }
     ],
-    "gender": "masculine"
+    "gender": "masculine",
+    "accepted_answers": {
+      "en": [
+        "fish"
+      ],
+      "ro": [
+        "pește"
+      ]
+    }
   },
   {
     "id": "orez",
@@ -1159,7 +1528,15 @@
       }
     ],
     "gender": "masculine",
-    "notes": "Usually a mass noun. Uncommon plural forms are omitted from this beginner dictionary."
+    "notes": "Usually a mass noun. Uncommon plural forms are omitted from this beginner dictionary.",
+    "accepted_answers": {
+      "en": [
+        "rice"
+      ],
+      "ro": [
+        "orez"
+      ]
+    }
   },
   {
     "id": "cartof",
@@ -1188,7 +1565,16 @@
         "en": "The potatoes are here."
       }
     ],
-    "gender": "masculine"
+    "gender": "masculine",
+    "accepted_answers": {
+      "en": [
+        "potato",
+        "a potato"
+      ],
+      "ro": [
+        "cartof"
+      ]
+    }
   },
   {
     "id": "leguma",
@@ -1217,7 +1603,16 @@
         "en": "The vegetables are good."
       }
     ],
-    "gender": "feminine"
+    "gender": "feminine",
+    "accepted_answers": {
+      "en": [
+        "vegetable",
+        "a vegetable"
+      ],
+      "ro": [
+        "legumă"
+      ]
+    }
   },
   {
     "id": "fruct",
@@ -1246,7 +1641,18 @@
         "en": "The fruit is good."
       }
     ],
-    "gender": "neuter"
+    "gender": "neuter",
+    "accepted_answers": {
+      "en": [
+        "fruit",
+        "a fruit",
+        "piece of fruit",
+        "a piece of fruit"
+      ],
+      "ro": [
+        "fruct"
+      ]
+    }
   },
   {
     "id": "mar",
@@ -1275,7 +1681,16 @@
         "en": "The apple is good."
       }
     ],
-    "gender": "neuter"
+    "gender": "neuter",
+    "accepted_answers": {
+      "en": [
+        "apple",
+        "an apple"
+      ],
+      "ro": [
+        "măr"
+      ]
+    }
   },
   {
     "id": "bere",
@@ -1304,6 +1719,14 @@
         "en": "Two beers, please."
       }
     ],
-    "gender": "feminine"
+    "gender": "feminine",
+    "accepted_answers": {
+      "en": [
+        "beer"
+      ],
+      "ro": [
+        "bere"
+      ]
+    }
   }
 ]

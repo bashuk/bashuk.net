@@ -48,8 +48,10 @@ This repository is a Hugo site using the Book theme. Its configuration is in
   public project decisions; do not add credentials, personal information, or
   private operational details.
 
-Do not edit generated files under `public/`. The app requirements are recorded
-below, but the app has not been built. `/ro/` is the intended app route.
+Do not edit generated files under `public/`. The pilot app is implemented under
+`static/ro/`, which Hugo serves at `/ro/`. The user has authorized publishing
+the pilot through the repository's existing GitHub Pages deployment from
+`main`. The app's public URL is `https://bashuk.net/ro/`.
 
 ## Agreed data formats
 
@@ -94,6 +96,13 @@ The pilot also uses `gender` on every noun (`masculine`, `feminine`, or
 `neuter`) and optional English `notes` for practical usage distinctions,
 such as informal/polite address or mass nouns. Notes are displayable learning
 content; the app must not rely on parsing them to identify grammatical forms.
+
+For practice, every entry now also has `accepted_answers`, an object with
+`en` and `ro` arrays of explicitly accepted answers. Optional `prompt_en`
+provides an unambiguous English quiz prompt, such as `you (informal, plural)`.
+These fields supplement the approved content; the original headwords,
+translations, grammatical forms, and examples are unchanged. The dictionary
+remains the app's only vocabulary input, without a runtime join to seeds.
 
 ```json
 [
@@ -177,8 +186,9 @@ The user has approved the pilot dictionary: **44 entries, 132 translated
 examples, and 180 verb forms**. Its IDs and order exactly match `seeds.json`.
 JSON structure, duplicate keys and IDs, module metadata, expected grammatical
 form keys, translated example coverage, and Romanian Unicode have been checked.
-Exercises and the app have not been built. The user's initial app requirements
-and the proposed pilot defaults are recorded below.
+The pilot app and exercises are implemented. The requirements and implementation
+decisions are recorded below. Real browser/device verification and user review
+of the app are still pending.
 
 ### Language reference checks
 
@@ -244,12 +254,11 @@ source-selection work.
   many files for code readability. Add the PWA manifest, service worker, and
   icons needed for installation and caching.
 
-## Proposed pilot implementation defaults
+## Pilot implementation decisions
 
-These recommendations were discussed alongside the requirements. They provide
-a starting point for implementation; exact scheduling constants and weights
-have not been fixed. Progress export/import is an optional recommendation,
-not an additional confirmed requirement.
+The implementation follows the defaults discussed alongside the requirements,
+with the timing choices documented here. Progress export/import was an optional
+recommendation and is included in the pilot.
 
 - **Progress model:** use five milestones per seed: finish Learn, then pass
   each of the four exercise modes in order. An unseen entry starts at 0%;
@@ -265,8 +274,11 @@ not an additional confirmed requirement.
 - **Practice sessions:** select up to ten distinct learned entries, weighted
   toward overdue entries and previous failures. Repeat failed entries after
   intervening questions when possible; those retries are additional attempts,
-  not additional distinct entries toward the ten-entry target. Exact retry
-  delays and behavior when no entries are due remain implementation decisions.
+  not additional distinct entries toward the ten-entry target. Allow up to two
+  extra retries per entry per session to avoid an endless loop. Entries still
+  missed at the end remain scheduled for another session. Use only due entries
+  for scheduled practice, even if this produces fewer than ten. When no entries
+  are due, offer clearly labeled optional extra practice.
 - **Typed answers:** ignore case, whitespace, and incidental punctuation.
   Accept Romanian without diacritics, then show the correct spelling. Define
   explicit accepted English alternatives rather than depending on fuzzy
@@ -286,8 +298,58 @@ not an additional confirmed requirement.
 - **Offline assets:** keep the app and dictionary available without external
   network dependencies after caching. Scope the service worker to `/ro/` so
   its caching behavior stays within the learning app.
-- **Optional backup:** consider JSON export/import of progress in Settings
-  alongside reset, since local progress otherwise has no portable backup.
+- **Backup:** Settings includes JSON export/import of progress and complete
+  attempt history. Validate imports and ask for confirmation before replacing
+  existing progress. Export the progress and attempts from one consistent
+  database snapshot, including when another tab has changed progress.
+
+### Review intervals and storage
+
+- Finishing a Learn batch makes its entries immediately due for the first
+  exercise. Correct answers schedule the next exercise after 5 minutes,
+  20 minutes, and 1 hour respectively; passing the fourth exercise marks the
+  entry mastered and schedules its next review after 1 day.
+- Each successful due review of a mastered entry doubles its interval, up to
+  180 days. A failed answer schedules review after 1 minute. A successful
+  mastered review after a failure restarts at a 1-day interval.
+- Extra practice can advance unfinished exercise milestones. Successful early
+  reviews of mastered entries keep their existing due time and interval;
+  failures still shorten the interval.
+- Weighted random selection prioritizes overdue entries, observed failure
+  ratios, and entries whose most recent attempt failed. Sample without
+  replacement for the session's initial set of up to ten entries.
+- Use IndexedDB (`bashuk-ro`, format version 1) for entry progress, in-progress
+  learning/practice sessions, and attempt history. Save each attempt and its
+  progress change in one transaction. Do not advance the UI if saving fails.
+- Use a revision check to reject stale writes from another tab rather than
+  silently overwrite newer progress. Reloading reads the latest saved state.
+- An interrupted session resumes after reload, including feedback for an
+  already submitted answer, without recording that answer twice.
+- Entry details show the latest 20 attempts; exports retain the full history.
+  Confirmed reset clears progress, sessions, and attempts, while retaining the
+  dictionary and offline asset cache.
+
+### Files and verification
+
+- `static/ro/index.html`, `app.js`, and `styles.css`: the buildless app shell,
+  behavior, and responsive styling. No runtime package installation is needed.
+- `static/ro/sw.js`: service worker scoped to `/ro/`. Cache the app shell,
+  dictionary, manifest, and icons. Cache names use the `bashuk-ro-` prefix;
+  activation must not delete caches belonging to other sections of the site.
+  Bump the worker's cache version when releasing shell changes.
+- `static/ro/manifest.webmanifest`, `icon.svg`, and `icons/`: installation
+  metadata, standard and maskable PWA icons, and the iOS touch icon.
+- `tests/`: Node tests for the learning/scheduling logic, answer checking,
+  distractors, backups, cache behavior, and DOM/IndexedDB integration. With
+  Node 24 or newer, run `npm ci --prefix tests`, then `npm test --prefix tests`.
+  These packages are test dependencies only; the app uses no external CDN.
+
+Validation passed: 12 logic/data/cache tests and 13 DOM/IndexedDB integration
+scenarios, plus JavaScript syntax and dictionary content-preservation checks.
+The tests cover failed-word retries, all four exercise modes, reload recovery,
+sorting, reset confirmation, import/export, failed saves, and concurrent tabs.
+DOM, IndexedDB, and service-worker tests use simulations; real browser layout,
+iOS Home Screen installation, and actual offline operation remain unverified.
 
 ## Plan
 
@@ -302,19 +364,23 @@ not an additional confirmed requirement.
 - [x] Check pilot entries for complete seed coverage, correct module metadata,
   useful grammatical forms, Romanian diacritics, and translated examples.
 - [x] Review the dictionary pilot with the user and obtain approval.
-- [x] Record the user's app requirements and proposed pilot defaults.
-- [ ] Build the home page, sequential Learn batches, and per-entry progress
+- [x] Record the user's app requirements and pilot implementation decisions.
+- [x] Build the home page, sequential Learn batches, and per-entry progress
   using the approved pilot dictionary.
-- [ ] Implement the four ordered practice modes, answer checking, and attempt
+- [x] Implement the four ordered practice modes, answer checking, and attempt
   history.
-- [ ] Implement randomized practice batches, failure retries, and exponential
+- [x] Implement randomized practice batches, failure retries, and exponential
   review scheduling, including reviews after mastery.
-- [ ] Build the full dictionary view with the three requested sorting modes.
-- [ ] Add local persistence and the settings modal with confirmed progress
-  reset; consider the optional progress export/import feature.
-- [ ] Add the PWA manifest, icons, and service worker for iOS installation
+- [x] Build the full dictionary view with the three requested sorting modes.
+- [x] Add local persistence and the settings modal with confirmed progress
+  reset and progress export/import.
+- [x] Add the PWA manifest, icons, and service worker for iOS installation
   and offline use.
-- [ ] Verify the pilot app's learning flows and deploy when authorized.
+- [x] Run automated logic, data, cache, and DOM/storage integration checks.
+- [ ] Verify the app's responsive layout and flows in a real browser, and
+  confirm iOS installation and offline operation on a device.
+- [x] Obtain user approval to commit and publish the pilot app to `main`.
+- [ ] Review the published pilot's learning experience with the user.
 - [ ] After the pilot app is built, expand the learning path toward 1,000
   seeds, using documented frequency sources and a useful balance of themes
   and word types.
@@ -323,6 +389,6 @@ not an additional confirmed requirement.
 
 The implementation sequence is **pilot seeds and dictionary → pilot app →
 full 1,000-seed curriculum and dictionary**. The pilot seeds and dictionary
-are approved, and the initial app requirements are documented. The next
-implementation phase is the pilot app. Use it to test the learning experience
-before expanding the content to 1,000 seeds.
+are approved, and the pilot app is implemented. The next steps are browser and
+device verification and user review. Test the learning experience with the
+pilot before expanding the content to 1,000 seeds.

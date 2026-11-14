@@ -1,0 +1,14 @@
+{
+  "name": "romanian-app-checks",
+  "private": true,
+  "scripts": {
+    "test": "node ro.test.cjs && node ro.integration.cjs"
+  },
+  "devDependencies": {
+    "fake-indexeddb": "6.2.8",
+    "jsdom": "31.0.1"
+  },
+  "engines": {
+    "node": ">=24"
+  }
+}
