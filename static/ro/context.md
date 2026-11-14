@@ -43,7 +43,10 @@ This repository is a Hugo site using the Book theme. Its configuration is in
   at `/ro/seeds.json` when the site is built and deployed.
 - `static/ro/dictionary.json`: planned location for the expanded dictionary;
   it does not exist yet.
-- `context.md`: this handoff document, kept outside the public static assets.
+- `static/ro/context.md`: this public project context document, served at
+  `/ro/context.md` when the site is built and deployed. Keep it limited to
+  public project decisions; do not add credentials, personal information, or
+  private operational details.
 
 Do not edit generated files under `public/`. The app UI has not been specified
 or built. `/ro/` is the intended app route, not an existing completed app.
@@ -170,15 +173,17 @@ inflections, and exercises have not been generated or validated yet.
   form keys and noun gender representation as needed.
 - [ ] Check pilot entries for complete seed coverage, correct module metadata,
   useful grammatical forms, Romanian diacritics, and translated examples.
-- [ ] Review the dictionary pilot with the user before scaling up.
-- [ ] Expand the learning path toward 1,000 seeds, using documented frequency
-  sources and a useful balance of themes and word types.
-- [ ] Expand and validate the dictionary for the larger curriculum.
-- [ ] Obtain the user's separate app requirements and build the `/ro/` app.
-- [ ] Verify the app's learning flows and deploy when authorized.
+- [ ] Review the dictionary pilot with the user.
+- [ ] Obtain the user's separate app requirements and build the `/ro/` app
+  using the pilot dictionary.
+- [ ] Verify the pilot app's learning flows and deploy when authorized.
+- [ ] After the pilot app is built, expand the learning path toward 1,000
+  seeds, using documented frequency sources and a useful balance of themes
+  and word types.
+- [ ] Expand and validate the dictionary for the larger curriculum, and check
+  that the app works with the expanded content.
 
-The immediate next content step is the pilot dictionary, not the full
-1,000-entry curriculum or app implementation. The user will describe the app
-separately. At this handoff, they have authorized committing the approved seeds
-and requested this context document. A local commit does not authorize a push
-or deployment: pushes to `main` trigger GitHub Pages publishing.
+The implementation sequence is **pilot seeds and dictionary → pilot app →
+full 1,000-seed curriculum and dictionary**. The immediate next content step
+is the pilot dictionary. The user will describe the app separately; use the
+pilot to test the learning experience before expanding the content.
