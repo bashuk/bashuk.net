@@ -26,7 +26,8 @@ entry. Common phrases are first-class entries, not merely examples.
   initial subset of that mix.
 - Arrange entries into explicit thematic blocks. Keep related entries together
   even when their individual frequencies differ, such as a complete set of
-  subject pronouns. Prefer small blocks of roughly 5–15 seeds.
+  subject pronouns. The full-curriculum draft uses modules of 10–25 seeds,
+  all multiples of five, taught in the app's five-entry Learn batches.
 - Module order and seed order within modules define the learning path.
 - Teach useful sentences from the start. Romanian often omits subject pronouns;
   examples should reflect natural usage even when conjugation tables show them.
@@ -47,6 +48,10 @@ This repository is a Hugo site using the Book theme. Its configuration is in
   `/ro/context.md` when the site is built and deployed. Keep it limited to
   public project decisions; do not add credentials, personal information, or
   private operational details.
+- `static/ro/curriculum-plan.md`: approved sequence and seed budgets for the
+  full 1,000-entry curriculum. The user approved the module plan on 2026-11-17
+  and requested preparing seeds for a separate review before expanding the
+  dictionary. Approval of the module plan does not change live vocabulary.
 
 Do not edit generated files under `public/`. The pilot app is implemented under
 `static/ro/`, which Hugo serves at `/ro/`. The user has authorized publishing
@@ -186,9 +191,12 @@ The user has approved the pilot dictionary: **44 entries, 132 translated
 examples, and 180 verb forms**. Its IDs and order exactly match `seeds.json`.
 JSON structure, duplicate keys and IDs, module metadata, expected grammatical
 form keys, translated example coverage, and Romanian Unicode have been checked.
-The pilot app and exercises are implemented. The requirements and implementation
-decisions are recorded below. Real browser/device verification and user review
-of the app are still pending.
+The pilot app and exercises are implemented. On 2026-11-16, the user reported
+that the app works well and they like the format, while noting that they have
+not used it long enough to assess what is missing. Independent browser/device
+verification, including iOS installation and real offline behavior, remains
+unverified. The next content step is review of the full curriculum's module
+plan, followed by seed expansion and then dictionary expansion.
 
 ### Language reference checks
 
@@ -380,15 +388,21 @@ iOS Home Screen installation, and actual offline operation remain unverified.
 - [ ] Verify the app's responsive layout and flows in a real browser, and
   confirm iOS installation and offline operation on a device.
 - [x] Obtain user approval to commit and publish the pilot app to `main`.
-- [ ] Review the published pilot's learning experience with the user.
-- [ ] After the pilot app is built, expand the learning path toward 1,000
-  seeds, using documented frequency sources and a useful balance of themes
-  and word types.
+- [x] Receive initial user feedback on the published pilot: the app works well
+  and the learning format is liked; longer-term feedback is still developing.
+- [x] Draft a redesigned full learning path: 60 modules, 1,000 total seeds,
+  with every module count a multiple of five.
+- [x] Review and approve the module sequence and seed budgets (2026-11-17).
+- [ ] Expand the approved plan into 1,000 unique seeds, using documented
+  frequency sources and a useful balance of themes and word types. Include
+  the existing 44 entries and preserve their IDs even if their modules change.
+- [ ] Review and approve the expanded seeds before expanding the dictionary.
 - [ ] Expand and validate the dictionary for the larger curriculum, and check
   that the app works with the expanded content.
 
 The implementation sequence is **pilot seeds and dictionary → pilot app →
 full 1,000-seed curriculum and dictionary**. The pilot seeds and dictionary
-are approved, and the pilot app is implemented. The next steps are browser and
-device verification and user review. Test the learning experience with the
-pilot before expanding the content to 1,000 seeds.
+are approved, the pilot app is implemented, and initial user feedback is
+positive. The full module plan is approved. The current task is to expand it
+into 1,000 seeds for review, then expand the dictionary after seed approval.
+Keep the live pilot dictionary unchanged during seed preparation and review.
