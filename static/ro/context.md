@@ -26,22 +26,24 @@ entry. Common phrases are first-class entries, not merely examples.
   initial subset of that mix.
 - Arrange entries into explicit thematic blocks. Keep related entries together
   even when their individual frequencies differ, such as a complete set of
-  subject pronouns. The full-curriculum draft uses modules of 10–25 seeds,
+  subject pronouns. The approved full-curriculum plan uses modules of 10–25 seeds,
   all multiples of five, taught in the app's five-entry Learn batches.
 - Module order and seed order within modules define the learning path.
 - Teach useful sentences from the start. Romanian often omits subject pronouns;
   examples should reflect natural usage even when conjugation tables show them.
 - Document frequency sources and selection methods when expanding the
-  curriculum. The current pilot is a curated selection; no external frequency
-  dataset has been used or verified yet.
+  curriculum. The pilot was initially curated without a frequency dataset;
+  the approved 1,000-seed list now uses frequency references documented in
+  `seed-sources.md`.
 
 ## Repository and file locations
 
 This repository is a Hugo site using the Book theme. Its configuration is in
 `hugo.toml`; `README.md` describes local development and publishing.
 
-- `static/ro/seeds.json`: the approved pilot curriculum. Hugo will serve this
-  at `/ro/seeds.json` when the site is built and deployed.
+- `static/ro/seeds.json`: the 1,000-entry seed list approved on 2026-11-17, arranged
+  in the 60 approved modules. This file is not a runtime vocabulary source
+  for the app; the app still uses the unchanged 44-entry pilot dictionary.
 - `static/ro/dictionary.json`: the pilot dictionary, containing all 44 approved
   seeds with grammatical forms and three translated examples per entry.
 - `static/ro/context.md`: this public project context document, served at
@@ -52,6 +54,12 @@ This repository is a Hugo site using the Book theme. Its configuration is in
   full 1,000-entry curriculum. The user approved the module plan on 2026-11-17
   and requested preparing seeds for a separate review before expanding the
   dictionary. Approval of the module plan does not change live vocabulary.
+- `static/ro/seed-review.md`: readable review tables for all 1,000 proposed
+  entries, including Romanian headwords, English glosses, proposed types,
+  IDs, modules, and learning priority. Use this with `seeds.json` when
+  preparing the later dictionary; IDs alone do not preserve diacritics.
+- `static/ro/seed-sources.md`: selection method, frequency references,
+  validation summary, ID distinctions, and notes for dictionary expansion.
 
 Do not edit generated files under `public/`. The pilot app is implemented under
 `static/ro/`, which Hugo serves at `/ro/`. The user has authorized publishing
@@ -393,16 +401,19 @@ iOS Home Screen installation, and actual offline operation remain unverified.
 - [x] Draft a redesigned full learning path: 60 modules, 1,000 total seeds,
   with every module count a multiple of five.
 - [x] Review and approve the module sequence and seed budgets (2026-11-17).
-- [ ] Expand the approved plan into 1,000 unique seeds, using documented
+- [x] Expand the approved plan into 1,000 unique seeds, using documented
   frequency sources and a useful balance of themes and word types. Include
   the existing 44 entries and preserve their IDs even if their modules change.
-- [ ] Review and approve the expanded seeds before expanding the dictionary.
+- [x] Review and approve the expanded seeds before expanding the dictionary
+  (2026-11-17); the user requested committing and pushing the seed files.
 - [ ] Expand and validate the dictionary for the larger curriculum, and check
   that the app works with the expanded content.
 
 The implementation sequence is **pilot seeds and dictionary → pilot app →
 full 1,000-seed curriculum and dictionary**. The pilot seeds and dictionary
 are approved, the pilot app is implemented, and initial user feedback is
-positive. The full module plan is approved. The current task is to expand it
-into 1,000 seeds for review, then expand the dictionary after seed approval.
-Keep the live pilot dictionary unchanged during seed preparation and review.
+positive. The full module plan was approved, committed, and pushed as
+`de5ebfa`. The 1,000 seeds in `seeds.json` and `seed-review.md`, with sources
+in `seed-sources.md`, are approved. The user requested committing and pushing
+those files, then expanding `dictionary.json` for all 1,000 entries. The next
+work is dictionary generation and validation, preserving the pilot IDs.

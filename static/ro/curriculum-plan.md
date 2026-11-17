@@ -150,13 +150,12 @@ The phases below are planning groups; modules remain the app's learning units.
 
 ## Selecting the seeds after approval
 
-This is an approved curriculum design, not a measured frequency ranking. No new
-corpus analysis or 1,000-entry selection has been completed at this stage.
-When expanding the approved modules into seeds, consult Romanian frequency
-data with attention to everyday/spoken usage, consolidate inflected forms into
-dictionary headwords, and document the sources and selection method. Useful
-phrases need a separate editorial pass because raw word-frequency lists do not
-provide a complete phrase curriculum.
+This is an approved curriculum design, not a measured frequency ranking. The
+subsequent [1,000-seed draft](seed-review.md) follows these module budgets and
+has its frequency checks and selection method documented in
+[seed-sources.md](seed-sources.md). It combines frequency evidence with
+everyday usefulness, consolidates inflected forms under entries, and includes
+an editorial selection of useful phrases.
 
 Counts refer to 1,000 total unique entries, including the existing 44 pilot
 seeds. The pilot's module structure is not a constraint on this redesign.
