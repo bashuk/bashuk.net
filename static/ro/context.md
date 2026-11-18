@@ -42,10 +42,13 @@ This repository is a Hugo site using the Book theme. Its configuration is in
 `hugo.toml`; `README.md` describes local development and publishing.
 
 - `static/ro/seeds.json`: the 1,000-entry seed list approved on 2026-11-17, arranged
-  in the 60 approved modules. This file is not a runtime vocabulary source
-  for the app; the app still uses the unchanged 44-entry pilot dictionary.
-- `static/ro/dictionary.json`: the pilot dictionary, containing all 44 approved
-  seeds with grammatical forms and three translated examples per entry.
+  in the 60 approved modules. This file is the curriculum input; the app reads
+  the self-contained dictionary at runtime.
+- `static/ro/dictionary.json`: the full approved dictionary, containing all 1,000
+  approved seeds with grammatical forms and three translated examples per entry.
+  The user approved committing and publishing the expansion on 2026-11-18.
+- `static/ro/dictionary-sources.md`: dictionary preparation, morphology sources,
+  attribution, grammar exceptions, and validation scope.
 - `static/ro/context.md`: this public project context document, served at
   `/ro/context.md` when the site is built and deployed. Keep it limited to
   public project decisions; do not add credentials, personal information, or
@@ -54,8 +57,8 @@ This repository is a Hugo site using the Book theme. Its configuration is in
   full 1,000-entry curriculum. The user approved the module plan on 2026-11-17
   and requested preparing seeds for a separate review before expanding the
   dictionary. Approval of the module plan does not change live vocabulary.
-- `static/ro/seed-review.md`: readable review tables for all 1,000 proposed
-  entries, including Romanian headwords, English glosses, proposed types,
+- `static/ro/seed-review.md`: readable review tables for all 1,000 approved
+  entries, including Romanian headwords, English glosses, primary types,
   IDs, modules, and learning priority. Use this with `seeds.json` when
   preparing the later dictionary; IDs alone do not preserve diacritics.
 - `static/ro/seed-sources.md`: selection method, frequency references,
@@ -105,7 +108,7 @@ A JSON array of self-contained entries. Every object includes:
 - `variations`: an object mapping short grammatical form keys to Romanian forms.
 - `examples`: a few short sentence objects, each with `ro` and `en` fields.
 
-The pilot also uses `gender` on every noun (`masculine`, `feminine`, or
+The dictionary uses `gender` on every noun (`masculine`, `feminine`, or
 `neuter`) and optional English `notes` for practical usage distinctions,
 such as informal/polite address or mass nouns. Notes are displayable learning
 content; the app must not rely on parsing them to identify grammatical forms.
@@ -113,9 +116,11 @@ content; the app must not rely on parsing them to identify grammatical forms.
 For practice, every entry now also has `accepted_answers`, an object with
 `en` and `ro` arrays of explicitly accepted answers. Optional `prompt_en`
 provides an unambiguous English quiz prompt, such as `you (informal, plural)`.
-These fields supplement the approved content; the original headwords,
-translations, grammatical forms, and examples are unchanged. The dictionary
-remains the app's only vocabulary input, without a runtime join to seeds.
+The expanded dictionary retains all 44 pilot IDs, their reviewed grammatical
+forms, examples, and accepted answers; their module assignments follow the
+new curriculum. English glosses follow the approved seed list, with quiz
+qualifiers retained where needed. The dictionary remains the app's only
+vocabulary input, without a runtime join to seeds.
 
 ```json
 [
@@ -152,25 +157,30 @@ The seeds file is the curriculum input; the dictionary is the runtime resource.
   `voi`, and `ei/ele`. Use the compound past (*perfect compus*) and the
   conversational `o să` future. The implemented keys are `{tense}_{subject}`,
   where tense is `present`, `past`, or `future`, and subject is `eu`, `tu`,
-  `el_ea`, `noi`, `voi`, or `ei_ele`: 18 forms per verb. Values omit the subject
+  `el_ea`, `noi`, `voi`, or `ei_ele`: 18 forms per ordinary verb. Values omit the subject
   pronoun. For example, `past_eu` is `am avut` and `future_el_ea` is `o să aibă`
   for `a-avea`. Future forms use the subjunctive, which can differ from the
   present indicative; do not generate them by simply prefixing present forms.
+  Impersonal `a trebui`, `a ploua`, and `a ninge` instead use three keys:
+  `present_impersonal`, `past_impersonal`, and `future_impersonal`. For `a durea`,
+  `a dura`, and `a costa`, teach only third-person singular/plural forms. The
+  app displays only available subjects, or an impersonal forms grid. Reflexive
+  and dative markers change with the subject, including in compound past forms.
 - **Nouns:** include grammatical gender, singular and plural forms, and useful
   definite forms. Romanian attaches the definite article to the noun. Keys are
   `singular`, `plural`, `singular_definite`, and `plural_definite`, with noun
-  gender in the top-level `gender` field. For `lapte` and `orez`, uncommon
-  plurals are deliberately omitted: these entries have only `singular` and
-  `singular_definite`, with a usage note. Missing forms are absent keys, not
+  gender in the top-level `gender` field. Uncommon plurals of mass nouns such
+  as `lapte` and `orez` are deliberately omitted, with usage notes. Plural-only
+  `ochelari` and food `paste` have no artificial singular. Missing forms are absent keys, not
   empty strings or invented plurals. An app should offer the forms that exist.
 - **Adjectives:** include masculine/feminine × singular/plural forms.
 - **Other types and phrases:** include relevant forms without forcing every
   entry into the same conjugation or declension table. The pilot uses
-  `informal` and `polite_or_plural` keys for useful phrase variants. Subject
-  pronouns have empty `variations` objects because their subject forms are
-  already separate seeds; object and possessive forms are postponed. The
-  word types used in this pilot are `phrase`, `interjection`, `adverb`,
-  `pronoun`, `verb`, and `noun`.
+  `informal` and `polite_or_plural` keys for useful phrase variants. The expanded
+  dictionary adds common direct/indirect object forms for personal pronouns,
+  gender/number forms for possessives and demonstratives, and numeral variants
+  such as `doi/două`. These are reference forms; detailed case exercises remain
+  outside the app's current scope. See `dictionary-sources.md` for type counts.
 - Postpone detailed case rules, uncommon constructions, and exhaustive
   alternatives. Keep examples short, practical, and natural.
 
@@ -180,8 +190,9 @@ third-person masculine and feminine subjects share conjugations.
 
 ## Approved pilot
 
-The user requested 3–4 modules with fewer than 50 seeds and has approved the
-current `static/ro/seeds.json`: **44 unique seeds across four modules**.
+The original approved pilot had **44 unique seeds across four modules**.
+The current files use the later approved 60-module curriculum; this table records
+the pilot's historical scope.
 
 | Order | Module ID | Module | Seeds |
 | --- | --- | --- | ---: |
@@ -192,19 +203,18 @@ current `static/ro/seeds.json`: **44 unique seeds across four modules**.
 
 The first module gives immediate conversational phrases and yes/no responses;
 the next two establish subjects and common actions; the final module supplies
-concrete vocabulary for simple requests and sentences. Read `seeds.json` for
-the exact approved IDs and order.
+concrete vocabulary for simple requests and sentences.
 
 The user has approved the pilot dictionary: **44 entries, 132 translated
-examples, and 180 verb forms**. Its IDs and order exactly match `seeds.json`.
+examples, and 180 verb forms**. Its IDs and order matched the original pilot seeds.
 JSON structure, duplicate keys and IDs, module metadata, expected grammatical
 form keys, translated example coverage, and Romanian Unicode have been checked.
 The pilot app and exercises are implemented. On 2026-11-16, the user reported
 that the app works well and they like the format, while noting that they have
 not used it long enough to assess what is missing. Independent browser/device
 verification, including iOS installation and real offline behavior, remains
-unverified. The next content step is review of the full curriculum's module
-plan, followed by seed expansion and then dictionary expansion.
+unverified. The full curriculum and seeds have since been approved; the full
+dictionary was approved for publication on 2026-11-18.
 
 ### Language reference checks
 
@@ -213,8 +223,8 @@ and noun forms were cross-checked against the public
 [UniMorph Romanian tables](https://github.com/unimorph/ron). That reference
 does not cover every pilot entry; remaining forms and translations were
 manually reviewed. There has been no independent language review. These
-checks do not establish a frequency ranking or replace the future curriculum
-source-selection work.
+checks do not establish a frequency ranking. The expanded dictionary's sources,
+authored examples, and review limits are recorded in `dictionary-sources.md`.
 
 ## App requirements
 
@@ -313,7 +323,9 @@ recommendation and is included in the pilot.
   from entries with a measured 0% failure ratio.
 - **Offline assets:** keep the app and dictionary available without external
   network dependencies after caching. Scope the service worker to `/ro/` so
-  its caching behavior stays within the learning app.
+  its caching behavior stays within the learning app. Serve cached navigation
+  and dictionary responses immediately, refreshing them in the background.
+  A missing cached dictionary waits for its first successful download.
 - **Backup:** Settings includes JSON export/import of progress and complete
   attempt history. Validate imports and ask for confirmation before replacing
   existing progress. Export the progress and attempts from one consistent
@@ -360,8 +372,9 @@ recommendation and is included in the pilot.
   Node 24 or newer, run `npm ci --prefix tests`, then `npm test --prefix tests`.
   These packages are test dependencies only; the app uses no external CDN.
 
-Validation passed: 12 logic/data/cache tests and 13 DOM/IndexedDB integration
-scenarios, plus JavaScript syntax and dictionary content-preservation checks.
+Validation for the expanded dictionary is recorded in `dictionary-sources.md`,
+including the logic/data/cache tests, DOM/IndexedDB integration scenarios,
+JavaScript syntax checks, and preservation of pilot forms and examples.
 The tests cover failed-word retries, all four exercise modes, reload recovery,
 sorting, reset confirmation, import/export, failed saves, and concurrent tabs.
 DOM, IndexedDB, and service-worker tests use simulations; real browser layout,
@@ -406,8 +419,12 @@ iOS Home Screen installation, and actual offline operation remain unverified.
   the existing 44 entries and preserve their IDs even if their modules change.
 - [x] Review and approve the expanded seeds before expanding the dictionary
   (2026-11-17); the user requested committing and pushing the seed files.
-- [ ] Expand and validate the dictionary for the larger curriculum, and check
+- [x] Commit and push the approved seeds and review documents as `b01c999`.
+- [x] Expand and validate the dictionary for the larger curriculum, and check
   that the app works with the expanded content.
+- [x] Obtain user review and approval of the full dictionary (2026-11-18).
+- [x] Commit and push the approved expansion and its app compatibility updates.
+- [ ] Collect learning feedback and refine translations, examples, and aliases.
 
 The implementation sequence is **pilot seeds and dictionary → pilot app →
 full 1,000-seed curriculum and dictionary**. The pilot seeds and dictionary
@@ -415,5 +432,14 @@ are approved, the pilot app is implemented, and initial user feedback is
 positive. The full module plan was approved, committed, and pushed as
 `de5ebfa`. The 1,000 seeds in `seeds.json` and `seed-review.md`, with sources
 in `seed-sources.md`, are approved. The user requested committing and pushing
-those files, then expanding `dictionary.json` for all 1,000 entries. The next
-work is dictionary generation and validation, preserving the pilot IDs.
+those files; that was completed as `b01c999`. The full dictionary now
+contains 1,000 entries, 3,000 translated examples, and 6,469 reference forms.
+The user approved committing and publishing the expansion on 2026-11-18.
+It includes app support for restricted/impersonal conjugation tables and
+service-worker cache version 2. To address startup latency, cached app navigation
+and dictionary loads return immediately, while network refreshes run in the
+background. The dictionary is 914,256 UTF-8 bytes (about 914 KB); local gzip
+compression produces 121,099 bytes, though actual transfer encoding is controlled
+by hosting. Next: collect learning feedback and verify real-device installation,
+offline behavior, and startup timing. Existing entry IDs keep local progress attached to the same
+words; overall completion uses the expanded denominator of 1,000 entries.

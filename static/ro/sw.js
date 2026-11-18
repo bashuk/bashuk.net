@@ -1,5 +1,5 @@
 /* Bump this version when the application shell changes. */
-const CACHE = "bashuk-ro-v1";
+const CACHE = "bashuk-ro-v2";
 const ROOT = new URL("./", self.location).href;
 const ASSETS = ["./", "./index.html", "./app.js", "./styles.css", "./dictionary.json", "./manifest.webmanifest", "./icon.svg", "./icons/icon-192.png", "./icons/icon-512.png", "./icons/maskable-512.png", "./icons/apple-touch-icon.png"].map(path => new URL(path, ROOT).href);
 
@@ -31,23 +31,25 @@ self.addEventListener("fetch", event => {
   if (request.method !== "GET" || url.origin !== self.location.origin || !url.href.startsWith(ROOT)) return;
   const known = ASSETS.includes(url.href);
   if (request.mode !== "navigate" && !known) return;
-  event.respondWith((async () => {
-    const cache = await caches.open(CACHE);
-    if (request.mode === "navigate" || url.pathname.endsWith("/dictionary.json")) {
+  if (request.mode === "navigate" || url.pathname.endsWith("/dictionary.json")) {
+    // Cached launches must not wait for a slow or unavailable network.
+    const refresh = (async () => {
       try {
         const response = await fetch(request);
         if (response.ok) {
+          const cache = await caches.open(CACHE);
           await cache.put(request, response.clone());
-          return response;
         }
-        const saved = await cache.match(request);
-        if (saved) return saved;
         return response;
-      } catch {
-        const saved = await cache.match(request) || (request.mode === "navigate" ? await cache.match(new URL("./index.html", ROOT).href) : null);
-        return saved || new Response("Connect once to download the app for offline use.", { status: 503, headers: { "Content-Type": "text/plain; charset=utf-8" } });
-      }
-    }
-    return await cache.match(request) || fetch(request);
-  })());
+      } catch { return null; }
+    })();
+    event.waitUntil(refresh.then(() => {}));
+    event.respondWith((async () => {
+      const cache = await caches.open(CACHE);
+      const saved = await cache.match(request) || (request.mode === "navigate" ? await cache.match(new URL("./index.html", ROOT).href) : null);
+      return saved || await refresh || new Response("Connect once to download the app for offline use.", { status: 503, headers: { "Content-Type": "text/plain; charset=utf-8" } });
+    })());
+    return;
+  }
+  event.respondWith(caches.open(CACHE).then(async cache => await cache.match(request) || fetch(request)));
 });

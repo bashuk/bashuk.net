@@ -76,8 +76,8 @@
     const idb = new IDBFactory();
     let dom = await open(idb, "#main");
     assert.ok(dom.window.document.body.textContent.includes("Learn something new"));
-    assert.equal(dom.window.document.querySelectorAll(".module-row").length, 4);
-    pass("fresh home loads all four module summaries");
+    assert.equal(dom.window.document.querySelectorAll(".module-row").length, 60);
+    pass("fresh home loads all 60 module summaries");
     await click(dom, '[data-action="start-learn"]');
     await waitFor(() => dom.window.document.querySelector(".word-face"), "learn card");
     assert.equal(dom.window.document.querySelector(".word-face h1").textContent, "salut");
@@ -124,7 +124,7 @@
     pass("all four exercise modes advance each entry independently to mastery");
     dom.window.location.hash = "dictionary";
     await waitFor(() => dom.window.document.getElementById("dictionary-search"), "dictionary");
-    assert.equal(dom.window.document.querySelectorAll(".word-row").length, 44);
+    assert.equal(dom.window.document.querySelectorAll(".word-row").length, 1000);
     const search = dom.window.document.getElementById("dictionary-search");
     search.value = "cafea"; search.dispatchEvent(new dom.window.Event("input", { bubbles: true }));
     assert.equal(dom.window.document.querySelectorAll(".word-row").length, 1);
@@ -138,6 +138,16 @@
     await waitFor(() => dom.window.document.querySelector("#history-list .history-item"), "entry history");
     assert.ok(dom.window.document.querySelector("#history-list").textContent.includes("Missed"));
     pass("entry details expose timestamped correct and failed attempts");
+    for (const [id, rows] of [["a-ploua", 0], ["a-durea", 2], ["a-se-trezi", 6], ["ultim", 0], ["ochelari", 0]]) {
+      dom.window.location.hash = "entry/" + id;
+      const entry = dictionary.find(entry => entry.id === id);
+      await waitFor(() => dom.window.document.querySelector(".word-face h1")?.textContent === entry.ro, id + " details");
+      assert.equal(dom.window.document.querySelectorAll(".table-wrap tbody tr").length, rows);
+      const content = dom.window.document.querySelector(".word-card").textContent;
+      assert.ok(!content.includes("undefined"), id);
+      for (const form of Object.values(entry.variations)) assert.ok(content.includes(form), `${id}: ${form}`);
+    }
+    pass("restricted verbs, reflexives, adjectives and plural-only nouns render their actual forms");
     const backup = { format: "bashuk-ro", version: 1, progress: saved.progress, attempts: saved.attempts };
     await click(dom, '[data-action="settings"]');
     await click(dom, '[data-action="confirm-reset"]');

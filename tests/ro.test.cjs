@@ -10,24 +10,57 @@
     return state;
   }
   function rng(seed = 42) { return () => ((seed = (1664525 * seed + 1013904223) >>> 0) / 4294967296); }
+  test("full dictionary covers the approved curriculum in order with usable reference content", () => {
+    const seeds = JSON.parse(fs.readFileSync(path.join(__dirname, "../static/ro/seeds.json"), "utf8"));
+    assert.equal(dictionary.length, 1000);
+    assert.equal(seeds.length, 60);
+    assert.deepEqual(dictionary.map(entry => entry.id), seeds.flatMap(module => module.seeds));
+    assert.equal(new Set(dictionary.map(entry => entry.id)).size, 1000);
+    for (const module of seeds) for (const id of module.seeds) {
+      const entry = dictionary.find(entry => entry.id === id);
+      assert.equal(entry.module_id, module.module_id);
+      assert.equal(entry.module, module.module);
+    }
+    for (const entry of dictionary) {
+      assert.ok(entry.ro && entry.en && entry.type, entry.id);
+      assert.equal(entry.examples.length, 3, entry.id);
+      for (const example of entry.examples) assert.ok(example.ro.trim() && example.en.trim(), entry.id);
+      assert.ok(Object.values(entry.variations).every(value => typeof value === "string" && value.trim()), entry.id);
+      const forms = [entry.ro, ...Object.values(entry.variations)].map(core.normalize);
+      assert.ok(entry.examples.some(example => forms.some(form => (` ${core.normalize(example.ro)} `).includes(` ${form} `))), `${entry.id}: examples should demonstrate the entry`);
+      if (entry.type === "noun") assert.ok(["masculine", "feminine", "neuter"].includes(entry.gender), entry.id);
+      if (entry.type === "adjective") for (const form of ["masculine_singular", "feminine_singular", "masculine_plural", "feminine_plural"]) assert.ok(entry.variations[form], entry.id);
+      if (entry.type === "verb") {
+        const count = ["a-trebui", "a-ploua", "a-ninge"].includes(entry.id) ? 3 : ["a-durea", "a-dura", "a-costa"].includes(entry.id) ? 6 : 18;
+        assert.equal(Object.keys(entry.variations).length, count, entry.id);
+      }
+    }
+    const byId = new Map(dictionary.map(entry => [entry.id, entry]));
+    assert.equal(byId.get("a-curata").variations.present_tu, "cureți");
+    assert.equal(byId.get("a-insista").variations.future_el_ea, "o să insiste");
+    assert.equal(byId.get("a-si-aminti").variations.past_eu, "mi-am amintit");
+    assert.equal(byId.get("guvern").variations.plural, "guverne");
+    assert.equal(byId.get("ochelari").variations.singular, undefined);
+    assert.equal(byId.get("paste").variations.singular, undefined);
+  });
   test("learning follows priority and never crosses a module boundary", () => {
     let state = core.freshState();
     assert.deepEqual(core.nextLearnBatch(dictionary, state), ["salut", "buna-ziua", "la-revedere", "te-rog", "multumesc"]);
     state = learned(dictionary.slice(0, 10).map(entry => entry.id));
-    assert.deepEqual(core.nextLearnBatch(dictionary, state), ["puteti-repeta", "vorbiti-engleza"]);
-    state = learned(dictionary.slice(0, 12).map(entry => entry.id));
     assert.deepEqual(core.nextLearnBatch(dictionary, state), ["eu", "tu", "el", "ea", "noi"]);
-    state = learned(dictionary.slice(0, 17).map(entry => entry.id));
-    assert.deepEqual(core.nextLearnBatch(dictionary, state), ["voi", "ei", "ele"]);
+    state = learned(dictionary.slice(0, 15).map(entry => entry.id));
+    assert.deepEqual(core.nextLearnBatch(dictionary, state), dictionary.slice(15, 20).map(entry => entry.id));
+    const partialModule = [...dictionary.slice(0, 7), ...dictionary.slice(10, 15)];
+    assert.deepEqual(core.nextLearnBatch(partialModule, learned(partialModule.slice(0, 5).map(entry => entry.id))), partialModule.slice(5, 7).map(entry => entry.id));
     assert.deepEqual(core.nextLearnBatch(dictionary, learned()), []);
   });
   test("overall progress includes learning and each exercise milestone", () => {
     const state = core.freshState();
     assert.equal(core.overallProgress(dictionary, state), 0);
     state.entries.salut = { ...core.wordState(state, "salut"), stage: 1 };
-    assert.equal(core.overallProgress(dictionary, state), 100 / (44 * 5));
+    assert.equal(core.overallProgress(dictionary, state), 100 / (dictionary.length * 5));
     state.entries.salut.stage = 5;
-    assert.equal(core.overallProgress(dictionary, state), 100 / 44);
+    assert.equal(core.overallProgress(dictionary, state), 100 / dictionary.length);
     for (const entry of dictionary) state.entries[entry.id] = { stage: 5 };
     assert.equal(core.overallProgress(dictionary, state), 100);
   });
@@ -101,6 +134,10 @@
     assert.ok(!core.isAccepted(byId.get("nu-inteleg"), "en", "I understand"));
     assert.ok(!core.isAccepted(byId.get("da"), "en", ""));
     assert.ok(!core.isAccepted(byId.get("te-rog"), "ro", "va rog"));
+    assert.ok(core.isAccepted(byId.get("opinie"), "ro", "parere"));
+    assert.ok(core.isAccepted(byId.get("a-tine-minte"), "ro", "a-si aminti"));
+    assert.ok(core.isAccepted(byId.get("doisprezece"), "ro", "douasprezece"));
+    assert.ok(!core.isAccepted(byId.get("a-sti"), "ro", "a cunoaste"));
   });
   test("every entry has explicit answers; ambiguous English prompts are distinguished", () => {
     for (const entry of dictionary) {
@@ -153,9 +190,9 @@
       assert.equal(data.readUInt32BE(20), size);
     }
   });
-  test("service worker caches the complete app, serves it offline, and leaves other site caches alone", async () => {
+  test("service worker serves cached launches immediately, refreshes in the background, and works offline", async () => {
     const listeners = {}, stores = new Map(), root = "https://example.test/ro/", messages = [];
-    let network = true, claimed = false;
+    let network = true, claimed = false, delayedRequests = null;
     const key = request => typeof request === "string" ? request : request.url;
     const cacheApi = {
       keys: async () => [...stores.keys()],
@@ -180,7 +217,11 @@
     };
     vm.runInNewContext(fs.readFileSync(path.join(__dirname, "../static/ro/sw.js"), "utf8"), {
       self, caches: cacheApi, URL, Response,
-      fetch: async request => { if (!network) throw new Error("offline"); return new Response("network " + key(request)); }
+      fetch: async request => {
+        if (!network) throw new Error("offline");
+        if (delayedRequests) return new Promise(resolve => delayedRequests.push({ request, resolve }));
+        return new Response("network " + key(request));
+      }
     });
     let pending;
     listeners.install({ waitUntil: promise => { pending = promise; } }); await pending;
@@ -188,16 +229,36 @@
     assert.ok(claimed);
     assert.ok(stores.has("blog-cache"));
     assert.ok(!stores.has("bashuk-ro-old"));
-    const store = stores.get("bashuk-ro-v1");
+    const store = stores.get("bashuk-ro-v2");
     assert.equal(store.size, 11);
     for (const url of store.keys()) {
       const relative = url.slice(root.length);
       assert.ok(fs.existsSync(path.join(__dirname, "../static/ro", relative || "index.html")), relative);
     }
+    delayedRequests = [];
+    for (const [url, mode] of [[root, "navigate"], [root + "dictionary.json", "cors"]]) {
+      let response, refresh, served = false;
+      listeners.fetch({ request: { url, method: "GET", mode }, respondWith: promise => { response = promise; }, waitUntil: promise => { refresh = promise; } });
+      response.then(() => { served = true; });
+      await new Promise(setImmediate);
+      assert.ok(served, `${url}: cached response must not wait for the network`);
+      assert.equal(await (await response).text(), "cached " + url);
+      assert.equal(delayedRequests.length, 1);
+      delayedRequests.shift().resolve(new Response("updated " + url));
+      await refresh;
+      assert.equal(await store.get(url).clone().text(), "updated " + url);
+    }
+    delayedRequests = null;
+    store.delete(root + "dictionary.json");
+    let downloaded, refreshed;
+    listeners.fetch({ request: { url: root + "dictionary.json", method: "GET", mode: "cors" }, respondWith: promise => { downloaded = promise; }, waitUntil: promise => { refreshed = promise; } });
+    assert.equal(await (await downloaded).text(), "network " + root + "dictionary.json");
+    await refreshed;
+    assert.ok(store.has(root + "dictionary.json"));
     network = false;
     for (const [url, mode] of [[root, "navigate"], [root + "dictionary.json", "cors"], [root + "app.js", "cors"], [root + "styles.css", "cors"], [root + "another-path", "navigate"]]) {
       let response;
-      listeners.fetch({ request: { url, method: "GET", mode }, respondWith: promise => { response = promise; } });
+      listeners.fetch({ request: { url, method: "GET", mode }, respondWith: promise => { response = promise; }, waitUntil: promise => { pending = promise; } });
       assert.equal((await response).status, 200, url);
     }
     let handled = false;

@@ -369,10 +369,11 @@
     const variations = entry.variations, keys = Object.keys(variations);
     if (!keys.length) return "";
     let content;
-    if (entry.type === "verb") {
-      content = `<div class="table-wrap" tabindex="0" role="region" aria-label="Conjugation table, scroll horizontally for all tenses"><table><thead><tr><th>Subject</th><th>Present</th><th>Past</th><th>Future</th></tr></thead><tbody>${SUBJECTS.map(([key, name]) => `<tr><th scope="row">${name}</th>${["present", "past", "future"].map(tense => `<td lang="ro">${escape(variations[`${tense}_${key}`])}</td>`).join("")}</tr>`).join("")}</tbody></table></div>`;
+    const subjects = SUBJECTS.filter(([key]) => ["present", "past", "future"].some(tense => variations[`${tense}_${key}`]));
+    if (entry.type === "verb" && subjects.length) {
+      content = `<div class="table-wrap" tabindex="0" role="region" aria-label="Conjugation table, scroll horizontally for all tenses"><table><thead><tr><th>Subject</th><th>Present</th><th>Past</th><th>Future</th></tr></thead><tbody>${subjects.map(([key, name]) => `<tr><th scope="row">${name}</th>${["present", "past", "future"].map(tense => `<td lang="ro">${escape(variations[`${tense}_${key}`] || "—")}</td>`).join("")}</tr>`).join("")}</tbody></table></div>`;
     } else {
-      const labels = { singular: "Singular", plural: "Plural", singular_definite: "The · singular", plural_definite: "The · plural", informal: "Informal", polite_or_plural: "Polite or plural" };
+      const labels = { singular: "Singular", plural: "Plural", singular_definite: "The · singular", plural_definite: "The · plural", informal: "Informal", polite_or_plural: "Polite or plural", present_impersonal: "Present · impersonal", past_impersonal: "Past · impersonal", future_impersonal: "Future · impersonal" };
       content = `<div class="forms-grid">${Object.entries(variations).map(([key, value]) => `<div class="form-item"><small>${escape(labels[key] || key.replaceAll("_", " "))}</small><span lang="ro">${escape(value)}</span></div>`).join("")}</div>`;
     }
     return `<details class="word-section"><summary>Forms <small>${keys.length} variations</small></summary>${content}</details>`;

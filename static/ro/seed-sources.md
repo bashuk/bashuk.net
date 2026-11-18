@@ -2,8 +2,9 @@
 
 **Status: seeds approved, 2026-11-17.** The module plan and the
 1,000 entries are approved. Read [the complete seed list](seed-review.md)
-alongside the ID-only curriculum in `seeds.json`. The runtime dictionary has
-not been expanded or changed.
+alongside the ID-only curriculum in `seeds.json`. The approved seeds were
+committed and pushed as `b01c999`. The full dictionary was approved for publication
+on 2026-11-18; see [dictionary preparation and sources](dictionary-sources.md).
 
 ## Selection method
 
@@ -109,8 +110,8 @@ distribution.
 ## IDs, meanings, and the later dictionary
 
 - All 44 pilot IDs are retained. They have new module assignments in the
-  seed draft, but the app's existing dictionary and local progress are not
-  modified by this work.
+  expanded curriculum. The full dictionary now carries those module assignments
+  while preserving the IDs used by existing local progress.
 - Keep Romanian spellings from `seed-review.md`; do not reconstruct them
   from ASCII IDs. Those tables contain every ID, headword, proposed type,
   English gloss, module, and global learning priority.
